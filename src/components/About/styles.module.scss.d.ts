@@ -1,0 +1,17 @@
+export declare const backgroundStar: string;
+export declare const centerContainer: string;
+export declare const codeImage: string;
+export declare const codingContainer: string;
+export declare const experienceText: string;
+export declare const gradientColor: string;
+export declare const gridBox: string;
+export declare const gridContainer: string;
+export declare const marqueeContainer: string;
+export declare const marqueeItem: string;
+export declare const mqContainer: string;
+export declare const mqText: string;
+export declare const profileImages: string;
+export declare const reazonLogo: string;
+export declare const sectionContainer: string;
+export declare const titleContainer: string;
+export declare const titleIntroText: string;

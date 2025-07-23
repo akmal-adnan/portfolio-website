@@ -1,0 +1,10 @@
+export declare const itemContainer: string;
+export declare const marqueeContainer: string;
+export declare const profileImages: string;
+export declare const profileImagesContainer: string;
+export declare const roundIconContainer: string;
+export declare const roundIconGroup: string;
+export declare const sectionContainer: string;
+export declare const textDescription: string;
+export declare const textIntro: string;
+export declare const textMainIntro: string;

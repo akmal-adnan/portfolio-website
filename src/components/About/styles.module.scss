@@ -1,0 +1,170 @@
+@use '../../styles/variables.scss' as *;
+
+.centerContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sectionContainer {
+  height: 100vh;
+}
+
+.titleContainer {
+  padding-top: calc(var(--header-height) + 1rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 60px;
+}
+
+.gridContainer {
+  max-width: 768px;
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: 200px 150px 200px;
+  grid-template-rows: 180px 200px 200px;
+
+  grid-template-areas:
+    'box1 box1 box2 box2'
+    'box1 box1 box3 box3'
+    'box4 box5 box5 box5';
+  grid-gap: 14px;
+
+  @include max-width(md) {
+    padding-inline: 20px;
+    grid-template-columns: auto;
+    grid-template-rows: 340px 200px 200px 200px 200px;
+    max-width: var(--sm);
+    grid-template-areas:
+      'box1'
+      'box2'
+      'box3'
+      'box4'
+      'box5';
+  }
+}
+
+.gridBox {
+  background-color: var(--ice-white);
+  border: 1px solid var(--white);
+  padding: 20px;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  background-image: var(--white-gradient);
+}
+
+.gradientColor {
+  background-image: var(--white-gradient);
+}
+
+.mqContainer {
+  margin-top: 30px;
+  overflow: unset !important;
+  transform: rotate(-20deg);
+}
+
+.mqText {
+  font-weight: var(--font-semi-bold);
+  font-size: 7rem;
+  padding: 0 15px !important;
+  border: none !important;
+  border-radius: 0px !important;
+  background: none !important;
+  -webkit-text-stroke: 3px var(--light-gray);
+}
+
+.profileImages {
+  display: flex;
+  justify-self: center;
+  position: absolute;
+  object-fit: cover;
+  width: 240px;
+  height: 300px;
+  bottom: 0;
+}
+
+.titleIntroText {
+  h2 {
+    background: var(--purple-gradient);
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: var(--h2-font-size);
+    margin-bottom: 4px;
+  }
+
+  h3 {
+    font-weight: var(--font-regular);
+    color: var(--dark-gray);
+  }
+}
+
+.experienceText {
+  flex-direction: column;
+  text-align: center;
+  gap: 10px;
+
+  h1 {
+    font-size: 4rem;
+    background: var(--purple-gradient);
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  h3 {
+    font-weight: var(--font-medium);
+    color: var(--dark-gray);
+  }
+}
+
+.codeImage {
+  height: 280px;
+  object-fit: cover;
+  margin-top: -30px;
+}
+
+.codingContainer {
+  p {
+    color: var(--dark-gray);
+    font-weight: var(--font-regular);
+  }
+
+  h3 {
+    background: var(--purple-gradient);
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: var(--h2-font-size);
+  }
+}
+
+.backgroundStar {
+  width: 30px;
+  height: auto;
+  position: absolute;
+  right: 40px;
+  top: 0;
+  filter: invert(30%);
+}
+
+.reazonLogo {
+  width: 290px;
+  height: 100px;
+  object-fit: cover;
+}
+
+.marqueeContainer {
+  margin-top: 15px;
+
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black var(--fade-size, 3rem),
+    black calc(100% - var(--fade-size, 3rem)),
+    transparent
+  );
+}
+
+.marqueeItem {
+  margin-bottom: 10px;
+}

@@ -1,0 +1,85 @@
+@use '../../styles/variables.scss' as *;
+
+.sectionContainer {
+  height: 100vh;
+}
+
+.itemContainer {
+  padding-top: var(--header-height);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  @include center-layout;
+}
+
+.profileImagesContainer {
+  margin-top: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--light-gray);
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  overflow: hidden;
+  padding-top: 14px;
+  padding-left: 4px;
+}
+
+.profileImages {
+  object-fit: cover;
+  width: 230px;
+  height: 230px;
+}
+
+.textIntro {
+  margin-left: 14px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  font-size: var(--h3-font-size);
+  font-weight: var(--font-regular);
+}
+
+.textMainIntro {
+  font-size: var(--large-font-size);
+  color: var(--bg-black);
+}
+
+.textDescription {
+  font-size: var(--normal-font-size);
+  font-weight: var(--font-light);
+  line-height: 1.8;
+  color: var(--dark-gray);
+  margin-top: 24px;
+  max-width: 600px;
+
+  @include max-width(md) {
+    font-size: var(--small-font-size);
+    line-height: 1.6;
+    margin-top: 14px;
+  }
+}
+
+.roundIconGroup {
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.roundIconContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  width: 50px;
+  height: 50px;
+  border: 1.5px solid var(--bg-black);
+}
+
+.marqueeContainer {
+  margin-top: 60px;
+  @include center-layout;
+}

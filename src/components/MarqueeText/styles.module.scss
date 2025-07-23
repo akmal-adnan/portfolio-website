@@ -1,0 +1,28 @@
+.marqueeContainer {
+  overflow: clip;
+}
+
+.marqueeTextTrack {
+  display: flex;
+  gap: 10px;
+  width: max-content;
+  animation: marqueeMoveText var(--speed, 10s) linear infinite
+    var(--direction, forwards);
+}
+
+.marqueeText {
+  background: var(--purple-gradient);
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+
+  font-weight: var(--font-medium);
+  border: 1px solid var(--purple);
+  padding: 5px 20px;
+  border-radius: 50px;
+}
+
+@keyframes marqueeMoveText {
+  to {
+    transform: translateX(-50%);
+  }
+}

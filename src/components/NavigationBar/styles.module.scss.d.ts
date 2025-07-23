@@ -1,0 +1,13 @@
+export declare const active: string;
+export declare const closeBtn: string;
+export declare const contactButton: string;
+export declare const headerContainer: string;
+export declare const logo: string;
+export declare const logoContainer: string;
+export declare const menuButton: string;
+export declare const mobileBackdrop: string;
+export declare const mobileMenu: string;
+export declare const mobileNav: string;
+export declare const navGroup: string;
+export declare const navGroupContainer: string;
+export declare const navText: string;

@@ -1,0 +1,29 @@
+// const baseColors = {
+//   PRIMARY: '#E61E0A',
+//   SECONDARY: '#43C66F',
+//   WHITE: '#FFFFFF',
+//   BLACK: '#323232',
+//   GRAY: '#969696',
+//   LIGHT_GRAY: '#E1E1E1',
+//   ATTENTION: '#FA7B05',
+//   ATTENTION_SECOND: '#f9bc20',
+//   ATTENTION_THIRD: ' #f7efe6',
+//   ERROR: '#FFFADC',
+//   ERROR_SECOND: '#FFE033',
+//   BACKGROUND: '#fff',
+//   BACKGROUND_SECOND: '#f5f5f5',
+//   BACKGROUND_THIRD: '#EAEAEA',
+//   ORANGE: '#EB5505',
+//   DARK_CHARCOAL: '#303030',
+//   BRIGHT_ORANGE: '#FD8C33',
+//   REVIEW_CROWN: '#F9BC20',
+// } as const;
+
+export const COLOR = {
+  BG_BLACK: '#1e1c1c',
+  BG_WHITE: '#fafafa',
+  WHITE: '#fff',
+  BLACK: '#000',
+  LIGHT_GRAY: '#E1E1E1',
+  GRAY: '#969696',
+};
