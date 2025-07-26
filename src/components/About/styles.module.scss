@@ -7,7 +7,7 @@
 }
 
 .sectionContainer {
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .titleContainer {
@@ -46,7 +46,6 @@
 }
 
 .gridBox {
-  background-color: var(--ice-white);
   border: 1px solid var(--white);
   padding: 20px;
   border-radius: 10px;
