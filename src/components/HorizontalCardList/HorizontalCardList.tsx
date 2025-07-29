@@ -1,9 +1,9 @@
+import styles from '@/components/HorizontalCardList/styles.module.scss';
 import { COLOR } from '@/utils/color';
 import { RiArrowRightLine } from '@remixicon/react';
-import styles from '@/components/HorizontalCardList/styles.module.scss';
-import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
+import { useEffect, useRef } from 'react';
 
 export type CardProps = {
   cardTitle: string;

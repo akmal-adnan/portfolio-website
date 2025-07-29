@@ -1,5 +1,4 @@
 import images from '@/assets/images';
-
 import styles from '@/components/Hero/styles.module.scss';
 import { COLOR } from '@/utils/color';
 import { RiGithubLine, RiLinkedinFill } from '@remixicon/react';

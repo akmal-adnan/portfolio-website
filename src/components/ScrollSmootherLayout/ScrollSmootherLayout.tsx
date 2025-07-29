@@ -1,6 +1,6 @@
-import { useLayoutEffect, useRef, type ReactNode } from 'react';
 import gsap from 'gsap';
 import ScrollSmoother from 'gsap/ScrollSmoother';
+import { useLayoutEffect, useRef, type ReactNode } from 'react';
 
 gsap.registerPlugin(ScrollSmoother);
 

@@ -1,8 +1,8 @@
 import images from '@/assets/images';
 import styles from '@/components/BGCircle/styles.module.scss';
-import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
+import { useEffect, useRef } from 'react';
 
 gsap.registerPlugin(ScrollTrigger);
 

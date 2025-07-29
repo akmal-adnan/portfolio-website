@@ -1,5 +1,5 @@
-import Hero from '@/components/Hero/Hero';
 import About from '@/components/About/About';
+import Hero from '@/components/Hero/Hero';
 import Posts from '@/components/Posts/Posts';
 import ScrollSmootherLayout from '@/components/ScrollSmootherLayout/ScrollSmootherLayout';
 import Services from '@/components/Services/Services';

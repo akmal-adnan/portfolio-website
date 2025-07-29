@@ -1,13 +1,13 @@
 import images from '@/assets/images';
-import { Link } from 'react-router';
 import styles from '@/components/NavigationBar/styles.module.scss';
+import { COLOR } from '@/utils/color';
 import {
   RiArrowRightUpLine,
   RiCloseLargeLine,
   RiMenu3Line,
 } from '@remixicon/react';
-import { COLOR } from '@/utils/color';
 import { useCallback, useEffect, useMemo, useState } from 'react';
+import { Link } from 'react-router';
 
 const NavLinks = [
   { label: 'Home', href: '#home' },

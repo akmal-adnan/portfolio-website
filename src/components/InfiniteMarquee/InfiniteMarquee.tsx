@@ -1,5 +1,5 @@
-import React from 'react';
 import styles from '@/components/InfiniteMarquee/styles.module.scss';
+import React from 'react';
 
 type Props = {
   images: string[];

@@ -1,8 +1,8 @@
+import BGCircle from '@/components/BGCircle/BGCircle';
 import NavigationBar from '@/components/NavigationBar/NavigationBar';
 import Home from '@/pages/Home/Home';
 import { Route, Routes } from 'react-router';
 import { Projects } from './Projects/Projects';
-import BGCircle from '@/components/BGCircle/BGCircle';
 
 const App = () => {
   return (
