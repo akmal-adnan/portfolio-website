@@ -22,8 +22,12 @@
 export const COLOR = {
   BG_BLACK: '#1e1c1c',
   BG_WHITE: '#fafafa',
-  WHITE: '#fff',
-  BLACK: '#000',
+  WHITE: '#FFFFFF',
+  BLACK: '#000000',
+  ICE_WHITE: '#F0F0F0',
   LIGHT_GRAY: '#E1E1E1',
   GRAY: '#969696',
+  DARK_GRAY: '#5D5D5D',
+  PURPLE: '#6c3baa',
+  PLUMP_PURPLE: '#8e4585',
 };

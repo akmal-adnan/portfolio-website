@@ -1,0 +1,12 @@
+@use '../../styles/variables.scss' as *;
+
+.cirleContainer {
+  position: fixed;
+  filter: invert(100%) grayscale(100%);
+
+  @include max-width(md) {
+    display: flex;
+    justify-self: center;
+    width: 900px;
+  }
+}

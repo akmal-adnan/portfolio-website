@@ -16,7 +16,7 @@ const ScrollSmootherLayout = ({ children }: Props) => {
     const smoother = ScrollSmoother.create({
       wrapper: wrapperRef.current!,
       content: contentRef.current!,
-      smooth: 1.2,
+      smooth: 1,
       effects: true,
       smoothTouch: 0.1,
     });

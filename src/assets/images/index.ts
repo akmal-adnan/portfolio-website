@@ -12,6 +12,7 @@ import utemLogo from '@/assets/images/utem-logo.png';
 import reazonLogo from '@/assets/images/reazon-logo.png';
 import bgCircle from '@/assets/images/bg-circle.png';
 import bgStar from '@/assets/images/bg-star.png';
+import pkmcg from '@/assets/images/pkmcg.png';
 
 import slider1 from '@/assets/images/slider1_1.png';
 import slider2 from '@/assets/images/slider1_2.png';
@@ -49,6 +50,7 @@ const images = {
   reazonLogo,
   bgCircle,
   bgStar,
+  pkmcg,
 };
 
 export default images;

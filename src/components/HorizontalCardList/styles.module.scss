@@ -1,25 +1,5 @@
 @use '../../styles/variables.scss' as *;
 
-.centerContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.sectionContainer {
-  min-height: 100vh;
-  position: relative;
-  overflow: hidden;
-}
-
-.titleContainer {
-  padding-top: calc(var(--header-height) + 1rem);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 35px;
-}
-
 .cardContainer {
   width: 100%;
   display: flex;
@@ -60,20 +40,6 @@
   height: 100%;
 }
 
-.cardImageContainer {
-  max-width: 800px;
-
-  @include max-width(md) {
-    height: 700px;
-  }
-
-  img {
-    height: 100%;
-    border-radius: 12px;
-    object-fit: cover;
-  }
-}
-
 .cardTitleGroup {
   background-color: var(--bg-white);
   border-radius: 12px;
@@ -107,5 +73,19 @@
 
   h3 {
     font-weight: 400;
+  }
+}
+
+.cardImageContainer {
+  max-width: 800px;
+
+  @include max-width(md) {
+    height: 700px;
+  }
+
+  img {
+    height: 100%;
+    border-radius: 12px;
+    object-fit: cover;
   }
 }
