@@ -61,7 +61,7 @@ const BGCircle = ({ defaultSpeed = 0.05 }: Props) => {
     return () => {
       ScrollTrigger.getAll().forEach((t) => t.kill());
     };
-  }, []);
+  }, [baseSpeed]);
 
   return (
     <div id="circleBg" className={styles.cirleContainer}>

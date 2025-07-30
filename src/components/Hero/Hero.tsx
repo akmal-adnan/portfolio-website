@@ -1,7 +1,12 @@
 import images from '@/assets/images';
 import styles from '@/components/Hero/styles.module.scss';
 import { COLOR } from '@/utils/color';
-import { RiGithubLine, RiLinkedinFill } from '@remixicon/react';
+import {
+  RiFileDownloadLine,
+  RiGithubLine,
+  RiLinkedinFill,
+} from '@remixicon/react';
+import MagneticButton from '../MagneticButton/MagneticButton';
 
 const Hero = () => {
   return (
@@ -27,15 +32,21 @@ const Hero = () => {
         </p>
 
         <div className={styles.roundIconGroup}>
-          <button type="button" className={styles.roundIconContainer}>
-            <RiGithubLine size={26} color={COLOR.BG_BLACK} />
-          </button>
-          <button type="button" className={styles.roundIconContainer}>
-            <RiLinkedinFill size={26} color={COLOR.BG_BLACK} />
-          </button>
-          <button type="button" className={styles.roundIconContainer}>
-            <RiGithubLine size={30} color={COLOR.BG_BLACK} />
-          </button>
+          <MagneticButton>
+            <button type="button" className={styles.roundIconContainer}>
+              <RiGithubLine size={26} color={COLOR.BG_BLACK} />
+            </button>
+          </MagneticButton>
+          <MagneticButton>
+            <button type="button" className={styles.roundIconContainer}>
+              <RiLinkedinFill size={26} color={COLOR.BG_BLACK} />
+            </button>
+          </MagneticButton>
+          <MagneticButton>
+            <button type="button" className={styles.roundIconContainer}>
+              <RiFileDownloadLine size={30} color={COLOR.BG_BLACK} />
+            </button>
+          </MagneticButton>
         </div>
       </div>
     </section>

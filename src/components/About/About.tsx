@@ -1,5 +1,7 @@
 import images from '@/assets/images';
 import styles from '@/components/About/styles.module.scss';
+import gsap from 'gsap';
+import { useEffect, useRef } from 'react';
 import MarqueeText from '../MarqueeText/MarqueeText';
 
 const nameStack = ['AKMAL', 'ADNAN', 'AKMAL', 'ADNAN', 'AKMAL', 'ADNAN'];
@@ -28,6 +30,27 @@ const stackList2 = [
 ];
 
 const About = () => {
+  const numberRef = useRef<HTMLSpanElement>(null);
+
+  useEffect(() => {
+    const el = numberRef.current;
+    if (!el) return;
+
+    const obj = { val: 0 };
+    gsap.to(obj, {
+      val: 5,
+      duration: 0.5,
+      scrollTrigger: {
+        trigger: el,
+        start: 'top 80%',
+        toggleActions: 'play reset play reset',
+      },
+      onUpdate: () => {
+        el.innerText = Math.floor(obj.val).toString();
+      },
+    });
+  }, []);
+
   return (
     <section className={styles.sectionContainer}>
       <div className={styles.titleContainer}>
@@ -95,7 +118,9 @@ const About = () => {
 
         <div className={`${styles.gridBox} ${styles.centerContainer}`}>
           <div className={styles.experienceText}>
-            <h1>5+</h1>
+            <h1>
+              <span ref={numberRef}>0</span>+
+            </h1>
             <h3>Years of Experience</h3>
           </div>
         </div>

@@ -8,6 +8,7 @@ import {
 } from '@remixicon/react';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router';
+import MagneticButton from '../MagneticButton/MagneticButton';
 
 const NavLinks = [
   { label: 'Home', href: '#home' },
@@ -104,10 +105,12 @@ const NavigationBar = () => {
             </ul>
           </div>
 
-          <Link to="/" className={styles.contactButton}>
-            Contact
-            <RiArrowRightUpLine color={COLOR.BLACK} size={18} />
-          </Link>
+          <MagneticButton>
+            <Link to="/" className={styles.contactButton}>
+              Contact
+              <RiArrowRightUpLine color={COLOR.BLACK} size={18} />
+            </Link>
+          </MagneticButton>
 
           <button className={styles.menuButton} onClick={openMenu}>
             <RiMenu3Line color={COLOR.BLACK} size={30} />
