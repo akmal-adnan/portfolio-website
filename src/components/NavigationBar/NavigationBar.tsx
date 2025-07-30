@@ -1,4 +1,5 @@
 import images from '@/assets/images';
+import MagneticButton from '@/components/common/MagneticButton/MagneticButton';
 import styles from '@/components/NavigationBar/styles.module.scss';
 import { COLOR } from '@/utils/color';
 import {
@@ -8,7 +9,6 @@ import {
 } from '@remixicon/react';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router';
-import MagneticButton from '../MagneticButton/MagneticButton';
 
 const NavLinks = [
   { label: 'Home', href: '#home' },

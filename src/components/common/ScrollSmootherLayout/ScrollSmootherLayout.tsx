@@ -27,10 +27,8 @@ const ScrollSmootherLayout = ({ children }: Props) => {
   }, []);
 
   return (
-    <div id="wrapper" ref={wrapperRef}>
-      <div id="content" ref={contentRef}>
-        {children}
-      </div>
+    <div ref={wrapperRef}>
+      <div ref={contentRef}>{children}</div>
     </div>
   );
 };

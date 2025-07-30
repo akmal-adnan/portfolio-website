@@ -1,4 +1,5 @@
 import images from '@/assets/images';
+import MagneticButton from '@/components/common/MagneticButton/MagneticButton';
 import styles from '@/components/Hero/styles.module.scss';
 import { COLOR } from '@/utils/color';
 import {
@@ -6,7 +7,6 @@ import {
   RiGithubLine,
   RiLinkedinFill,
 } from '@remixicon/react';
-import MagneticButton from '../MagneticButton/MagneticButton';
 
 const Hero = () => {
   return (

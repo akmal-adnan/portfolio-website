@@ -1,4 +1,4 @@
-import styles from '@/components/HorizontalCardList/styles.module.scss';
+import styles from '@/components/common/HorizontalCardList/styles.module.scss';
 import { COLOR } from '@/utils/color';
 import { RiArrowRightLine } from '@remixicon/react';
 import gsap from 'gsap';

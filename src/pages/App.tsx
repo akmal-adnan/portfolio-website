@@ -1,4 +1,4 @@
-import BGCircle from '@/components/BGCircle/BGCircle';
+import BGCircle from '@/components/common/BGCircle/BGCircle';
 import NavigationBar from '@/components/NavigationBar/NavigationBar';
 import Home from '@/pages/Home/Home';
 import { Route, Routes } from 'react-router';

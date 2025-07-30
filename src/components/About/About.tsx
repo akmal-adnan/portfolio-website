@@ -1,8 +1,8 @@
 import images from '@/assets/images';
 import styles from '@/components/About/styles.module.scss';
+import MarqueeText from '@/components/common/MarqueeText/MarqueeText';
 import gsap from 'gsap';
 import { useEffect, useRef } from 'react';
-import MarqueeText from '../MarqueeText/MarqueeText';
 
 const nameStack = ['AKMAL', 'ADNAN', 'AKMAL', 'ADNAN', 'AKMAL', 'ADNAN'];
 

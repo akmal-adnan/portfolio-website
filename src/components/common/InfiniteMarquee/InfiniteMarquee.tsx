@@ -1,4 +1,4 @@
-import styles from '@/components/InfiniteMarquee/styles.module.scss';
+import styles from '@/components/common/InfiniteMarquee/styles.module.scss';
 import React from 'react';
 
 type Props = {

@@ -1,7 +1,7 @@
 import images from '@/assets/images';
 import HorizontalCardList, {
   type CardProps,
-} from '@/components/HorizontalCardList/HorizontalCardList';
+} from '@/components/common/HorizontalCardList/HorizontalCardList';
 import styles from '@/components/Posts/styles.module.scss';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';

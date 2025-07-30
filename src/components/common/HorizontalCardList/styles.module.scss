@@ -1,4 +1,4 @@
-@use '../../styles/variables.scss' as *;
+@use '../../../styles/variables.scss' as *;
 
 .cardContainer {
   width: 100%;
@@ -38,6 +38,7 @@
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
+  gap: 20px; // Effect on mobile
 }
 
 .cardTitleGroup {

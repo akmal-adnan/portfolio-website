@@ -1,4 +1,4 @@
-import styles from '@/components/MarqueeText/styles.module.scss';
+import styles from '@/components/common/MarqueeText/styles.module.scss';
 
 type Props = {
   item: string[];

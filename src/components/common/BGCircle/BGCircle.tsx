@@ -1,5 +1,5 @@
 import images from '@/assets/images';
-import styles from '@/components/BGCircle/styles.module.scss';
+import styles from '@/components/common/BGCircle/styles.module.scss';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import { useEffect, useRef } from 'react';
