@@ -7,6 +7,7 @@ import {
   RiGithubLine,
   RiLinkedinFill,
 } from '@remixicon/react';
+import AnimatedButton from '../common/AnimatedButton/AnimatedButton';
 
 const Hero = () => {
   return (
@@ -33,19 +34,27 @@ const Hero = () => {
 
         <div className={styles.roundIconGroup}>
           <MagneticButton>
-            <button type="button" className={styles.roundIconContainer}>
-              <RiGithubLine size={26} color={COLOR.BG_BLACK} />
-            </button>
+            <AnimatedButton>
+              <button type="button" className={styles.roundIconContainer}>
+                <RiGithubLine size={30} color={COLOR.BG_BLACK} />
+              </button>
+            </AnimatedButton>
           </MagneticButton>
+
           <MagneticButton>
-            <button type="button" className={styles.roundIconContainer}>
-              <RiLinkedinFill size={26} color={COLOR.BG_BLACK} />
-            </button>
+            <AnimatedButton>
+              <button type="button" className={styles.roundIconContainer}>
+                <RiLinkedinFill size={30} color={COLOR.BG_BLACK} />
+              </button>
+            </AnimatedButton>
           </MagneticButton>
+
           <MagneticButton>
-            <button type="button" className={styles.roundIconContainer}>
-              <RiFileDownloadLine size={30} color={COLOR.BG_BLACK} />
-            </button>
+            <AnimatedButton>
+              <button type="button" className={styles.roundIconContainer}>
+                <RiFileDownloadLine size={30} color={COLOR.BG_BLACK} />
+              </button>
+            </AnimatedButton>
           </MagneticButton>
         </div>
       </div>

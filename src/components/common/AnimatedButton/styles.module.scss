@@ -1,0 +1,21 @@
+.roundedButton {
+  border-radius: 3em;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.circle {
+  height: 150%;
+  position: absolute;
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.childrenContainer {
+  position: relative;
+  z-index: 1;
+}

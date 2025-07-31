@@ -25,7 +25,7 @@ export const COLOR = {
   WHITE: '#FFFFFF',
   BLACK: '#000000',
   ICE_WHITE: '#F0F0F0',
-  LIGHT_GRAY: '#E1E1E1',
+  LIGHT_GRAY: '#e0e0e0',
   GRAY: '#969696',
   DARK_GRAY: '#5D5D5D',
   PURPLE: '#6c3baa',

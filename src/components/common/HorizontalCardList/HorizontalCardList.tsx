@@ -4,6 +4,7 @@ import { RiArrowRightLine } from '@remixicon/react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import { useEffect, useRef } from 'react';
+import AnimatedButton from '../AnimatedButton/AnimatedButton';
 
 export type CardProps = {
   cardTitle: string;
@@ -84,10 +85,14 @@ const HorizontalCardList = ({ cardList }: Props) => {
                 <h3>Stack Used</h3>
                 <p>{item.cardStackList}</p>
 
-                <button type="button" className={styles.buttonSourceCode}>
-                  <h3>Source code</h3>
-                  <RiArrowRightLine color={COLOR.PLUMP_PURPLE} />
-                </button>
+                <div className={styles.buttonSourceContainer}>
+                  <AnimatedButton>
+                    <button type="button" className={styles.buttonSourceCode}>
+                      <h3>View Now</h3>
+                      <RiArrowRightLine color={COLOR.BG_BLACK} />
+                    </button>
+                  </AnimatedButton>
+                </div>
               </div>
             </div>
 

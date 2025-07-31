@@ -65,9 +65,28 @@ nav {
   align-items: center;
   padding: 12px 20px 12px 24px;
   border-radius: 50px;
-  font-size: var(--small-font-size);
-  font-weight: var(--font-light);
   border: 1px solid var(--black);
+
+  p {
+    transition: color 0.25s linear;
+    font-size: var(--small-font-size);
+    font-weight: var(--font-light);
+    color: var(--black);
+  }
+
+  svg {
+    transition: fill 0.25s linear;
+  }
+
+  &:hover {
+    border-color: var(--purple);
+    svg {
+      fill: var(--white);
+    }
+    p {
+      color: var(--white);
+    }
+  }
 
   @include max-width(md) {
     display: none;
