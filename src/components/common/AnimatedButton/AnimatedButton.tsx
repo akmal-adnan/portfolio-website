@@ -1,16 +1,15 @@
 import styles from '@/components/common/AnimatedButton/styles.module.scss';
-import { COLOR } from '@/utils/color';
 import { motion, useAnimation, type Variants } from 'framer-motion';
 import { useRef } from 'react';
 
 type AnimatedButtonProps = React.HTMLAttributes<HTMLDivElement> & {
   children: React.ReactNode;
-  backgroundColor?: string;
+  circleClassName?: string;
 };
 
 const AnimatedButton = ({
   children,
-  backgroundColor = COLOR.PLUMP_PURPLE,
+  circleClassName,
   ...props
 }: AnimatedButtonProps) => {
   const controls = useAnimation();
@@ -39,7 +38,7 @@ const AnimatedButton = ({
       width: '110%',
       transition: {
         duration: 0.4,
-        ease: [0.23, 1, 0.32, 1],
+        ease: [0.32, 0, 0.67, 0],
       },
     },
     exit: {
@@ -47,7 +46,6 @@ const AnimatedButton = ({
       width: '150%',
       transition: {
         duration: 0.25,
-        ease: [0.23, 1, 0.32, 1],
       },
     },
   };
@@ -60,8 +58,7 @@ const AnimatedButton = ({
       {...props}
     >
       <motion.div
-        className={styles.circle}
-        style={{ backgroundColor }}
+        className={`${styles.circle} ${circleClassName}`}
         variants={circleVariants}
         initial="initial"
         animate={controls}
