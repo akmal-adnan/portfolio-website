@@ -1,5 +1,8 @@
+@use '../../styles/variables.scss' as *;
+
 .sectionContainer {
   min-height: 100vh;
+  @include center-layout;
 }
 
 .titleContainer {
@@ -8,4 +11,87 @@
   justify-content: center;
   align-items: center;
   margin-bottom: 35px;
+}
+
+.itemContainer {
+  display: flex;
+  justify-content: space-between;
+  height: 50vh;
+  align-items: center;
+
+  @include max-width(md) {
+    flex-direction: column;
+    gap: 40px;
+    align-items: unset;
+  }
+}
+
+.cardGroup {
+  flex: 1 0 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.cardContainer {
+  position: relative;
+  padding: 8px 16px;
+  transition: color 0.3s ease;
+  cursor: pointer;
+
+  h2 {
+    font-size: 2em;
+    transition: color 0.3s ease;
+  }
+}
+
+.cardIndicator {
+  background: var(--purple-gradient);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border-radius: 6px;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.contentContainer {
+  flex: 1 1 50%;
+  padding: 20px;
+  position: relative;
+
+  border: 1px solid var(--white);
+  border-radius: 10px;
+  background-image: var(--white-gradient);
+}
+
+.contentTitle {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+
+  h3 {
+    background: var(--purple-gradient);
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: var(--h3-font-size);
+    margin-bottom: 16px;
+  }
+}
+
+.contentDescription {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.backgroundStar {
+  width: 30px;
+  height: auto;
+  position: absolute;
+  right: 60px;
+  top: 0;
+  filter: invert(30%);
 }
