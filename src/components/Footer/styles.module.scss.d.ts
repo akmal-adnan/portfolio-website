@@ -1,0 +1,7 @@
+export declare const arrowContainer: string;
+export declare const iconContainer: string;
+export declare const itemContainer: string;
+export declare const menuContainer: string;
+export declare const menuGroup: string;
+export declare const nameGroup: string;
+export declare const sectionContainer: string;

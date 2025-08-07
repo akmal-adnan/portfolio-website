@@ -1,0 +1,76 @@
+@use '../../styles/variables.scss' as *;
+
+.sectionContainer {
+  background-color: var(--bg-black);
+  height: 480px;
+  padding-top: 30px;
+  padding-bottom: 20px;
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    color: var(--ice-white);
+  }
+
+  p {
+    color: var(--light-gray);
+  }
+
+  @include max-width(md) {
+    height: 400px;
+  }
+
+  @include max-width(sm) {
+    height: 360px;
+  }
+}
+
+.itemContainer {
+  @include center-layout;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.menuGroup {
+  display: flex;
+  gap: 100px;
+}
+
+.menuContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  h4 {
+    margin-bottom: 8px;
+  }
+}
+
+.iconContainer {
+  display: flex;
+  gap: 10px;
+}
+
+.nameGroup {
+  position: relative;
+
+  h1 {
+    font-size: 9vw;
+    font-family: Neue World;
+    font-weight: 400;
+    color: var(--white);
+  }
+
+  p {
+    color: var(--light-gray);
+  }
+}
+
+.arrowContainer {
+  position: absolute;
+  right: 0px;
+  top: -20px;
+}

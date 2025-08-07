@@ -1,41 +1,17 @@
 import images from '@/assets/images';
 import styles from '@/components/Services/styles.module.scss';
 import { COLOR } from '@/utils/color';
+import { TextList } from '@/utils/posts';
+import gsap from 'gsap';
+import ScrollTrigger from 'gsap/ScrollTrigger';
 import { motion } from 'motion/react';
-import { useRef, useState } from 'react';
+import { useState } from 'react';
+import VelocityScrollText from '../common/VelocityScrollText/VelocityScrollText';
 
-const TextList = [
-  {
-    name: 'Web Development',
-    description: [
-      'Web development and deployment',
-      'Single Page Applications (SPAs)',
-      'Landing pages and business websites',
-      'Portfolio websites',
-      'AI implementation',
-    ],
-  },
-  {
-    name: 'Mobile Development',
-    description: [
-      'Mobile-friendly web apps',
-      'React Native mobile apps',
-      'App development and release',
-    ],
-  },
-  {
-    name: 'UI/UX Design Prototyping',
-    description: [
-      'UI design with Figma & Adobe XD',
-      'UX research & improvements',
-      'Prototyping for websites & mobile apps',
-    ],
-  },
-];
+gsap.registerPlugin(ScrollTrigger);
 
 const Services = () => {
   const [selectedIndex, setSelectedIndex] = useState(0);
-  const groupRef = useRef<HTMLDivElement>(null);
 
   return (
     <section className={styles.sectionContainer}>
@@ -44,10 +20,9 @@ const Services = () => {
       </div>
 
       <div className={styles.itemContainer}>
-        <div className={styles.cardGroup} ref={groupRef}>
+        <div className={styles.cardGroup}>
           {TextList.map((item, i) => {
-            const selected = selectedIndex == i;
-
+            const selected = selectedIndex === i;
             return (
               <button
                 key={i}
@@ -57,7 +32,6 @@ const Services = () => {
                 <h2 style={{ color: selected ? COLOR.WHITE : COLOR.BLACK }}>
                   {item.name}
                 </h2>
-
                 {selected && (
                   <motion.div
                     layoutId="pill-tab"
@@ -73,21 +47,16 @@ const Services = () => {
         <motion.div
           className={styles.contentContainer}
           layout
-          transition={{
-            type: 'spring',
-            duration: 0.5,
-          }}
+          transition={{ type: 'spring', duration: 0.5 }}
         >
           <img
             src={images.bgStar}
             alt="star"
             className={styles.backgroundStar}
           />
-
           <div className={styles.contentTitle}>
             <h3>{TextList[selectedIndex].name}</h3>
           </div>
-
           <div className={styles.contentDescription}>
             {TextList[selectedIndex].description.map((text, i) => (
               <p key={i}>• {text}</p>
@@ -95,6 +64,8 @@ const Services = () => {
           </div>
         </motion.div>
       </div>
+
+      <VelocityScrollText textContent={'Frontend Developer -'} />
     </section>
   );
 };
