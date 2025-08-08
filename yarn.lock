@@ -3162,6 +3162,11 @@ supports-preserve-symlinks-flag@^1.0.0:
   resolved "https://registry.npmjs.org/supports-preserve-symlinks-flag/-/supports-preserve-symlinks-flag-1.0.0.tgz"
   integrity sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==
 
+tech-stack-icons@^3.3.2:
+  version "3.3.2"
+  resolved "https://registry.yarnpkg.com/tech-stack-icons/-/tech-stack-icons-3.3.2.tgz#83b7ee455237a8b224dbf1fd32c8d97d6fcbfa51"
+  integrity sha512-5QegRg78uTzcgHOg61yU5G9w5UO88/R+yzKagKZFyAocGZrGPy1kF0hV2BWT8IT8j+AQ0/gDX4Je4n/DQDfcuw==
+
 tinyglobby@^0.2.14:
   version "0.2.14"
   resolved "https://registry.npmjs.org/tinyglobby/-/tinyglobby-0.2.14.tgz"
