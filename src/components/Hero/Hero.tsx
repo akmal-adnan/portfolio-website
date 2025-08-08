@@ -7,9 +7,26 @@ import {
   RiGithubLine,
   RiLinkedinFill,
 } from '@remixicon/react';
+import { motion, type Variants } from 'motion/react';
 import AnimatedButton from '../common/AnimatedButton/AnimatedButton';
 
 const Hero = () => {
+  const containerVariants = {
+    visible: {
+      transition: {
+        staggerChildren: 0.3, // delay between each button
+      },
+    },
+  };
+
+  const springVariants: Variants = {
+    hidden: { scale: 0 },
+    visible: {
+      scale: 1,
+      transition: { type: 'spring', stiffness: 200, damping: 12 },
+    },
+  };
+
   return (
     <section className={styles.sectionContainer} id="home">
       <div className={styles.itemContainer}>
@@ -32,8 +49,13 @@ const Hero = () => {
           in visual development, responsive web design and UI/UX design.
         </p>
 
-        <div className={styles.roundIconGroup}>
-          <MagneticButton>
+        <motion.div
+          className={styles.roundIconGroup}
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+        >
+          <MagneticButton variants={springVariants}>
             <AnimatedButton>
               <button type="button" className={styles.roundIconContainer}>
                 <RiGithubLine size={30} color={COLOR.BG_BLACK} />
@@ -41,7 +63,7 @@ const Hero = () => {
             </AnimatedButton>
           </MagneticButton>
 
-          <MagneticButton>
+          <MagneticButton variants={springVariants}>
             <AnimatedButton>
               <button type="button" className={styles.roundIconContainer}>
                 <RiLinkedinFill size={30} color={COLOR.BG_BLACK} />
@@ -49,14 +71,14 @@ const Hero = () => {
             </AnimatedButton>
           </MagneticButton>
 
-          <MagneticButton>
+          <MagneticButton variants={springVariants}>
             <AnimatedButton>
               <button type="button" className={styles.roundIconContainer}>
                 <RiFileDownloadLine size={30} color={COLOR.BG_BLACK} />
               </button>
             </AnimatedButton>
           </MagneticButton>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
