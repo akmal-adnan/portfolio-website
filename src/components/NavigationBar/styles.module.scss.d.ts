@@ -8,6 +8,8 @@ export declare const menuButton: string;
 export declare const mobileBackdrop: string;
 export declare const mobileMenu: string;
 export declare const mobileNav: string;
+export declare const mobileNavBorder: string;
 export declare const navGroup: string;
 export declare const navGroupContainer: string;
+export declare const navIndicator: string;
 export declare const navText: string;

@@ -39,7 +39,7 @@ const HorizontalCardList = ({ cardList }: Props) => {
       x: -totalScroll,
       ease: 'none',
       scrollTrigger: {
-        trigger: '#scroll-section',
+        trigger: '#posts',
         start: 'top top',
         end: `+=${totalScroll}`,
         pin: true,

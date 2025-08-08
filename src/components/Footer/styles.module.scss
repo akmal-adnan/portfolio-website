@@ -16,14 +16,6 @@
   p {
     color: var(--light-gray);
   }
-
-  @include max-width(md) {
-    height: 400px;
-  }
-
-  @include max-width(sm) {
-    height: 360px;
-  }
 }
 
 .itemContainer {
@@ -62,6 +54,11 @@
     font-family: Neue World;
     font-weight: 400;
     color: var(--white);
+    margin-bottom: 20px;
+
+    @include max-width(md) {
+      font-size: 5em;
+    }
   }
 
   p {

@@ -7,19 +7,35 @@ import {
   RiCloseLargeLine,
   RiMenu3Line,
 } from '@remixicon/react';
+import { motion } from 'framer-motion';
 import { useCallback, useEffect, useMemo, useState } from 'react';
-import { Link } from 'react-router';
 import AnimatedButton from '../common/AnimatedButton/AnimatedButton';
+
+import gsap from 'gsap';
+import ScrollSmoother from 'gsap/ScrollSmoother';
+import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
+import ScrollTrigger from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, ScrollSmoother);
 
 const NavLinks = [
   { label: 'Home', href: '#home' },
   { label: 'About', href: '#about' },
   { label: 'Posts', href: '#posts' },
   { label: 'Services', href: '#services' },
+  { label: 'More', href: '#more' },
 ];
 
 const NavigationBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState<string>('#home');
+
+  const scrollToSection = (target: string) => {
+    const smoother = ScrollSmoother.get();
+    if (smoother) {
+      smoother.scrollTo(target, true);
+    }
+  };
 
   const openMenu = useCallback(() => {
     setIsMenuOpen(true);
@@ -56,51 +72,97 @@ const NavigationBar = () => {
     };
   }, [isMenuOpen, closeMenu]);
 
-  const mobileNavigation = () => {
-    return (
-      <>
-        <div
-          className={`${styles.mobileBackdrop} ${styleActive}`}
-          onClick={closeMenu}
-        />
+  useEffect(() => {
+    const triggers: ScrollTrigger[] = [];
 
-        <div className={`${styles.mobileMenu} ${styleActive}`}>
-          <button className={styles.closeBtn} aria-label="Close mobile menu">
-            <RiCloseLargeLine
-              color={COLOR.BLACK}
-              size={30}
-              onClick={closeMenu}
-            />
-          </button>
+    NavLinks.forEach(({ href }) => {
+      const trigger = ScrollTrigger.create({
+        trigger: href,
+        start: 'top center',
+        end: 'bottom center',
+        onEnter: () => setActiveSection(href),
+        onEnterBack: () => setActiveSection(href),
+      });
+      triggers.push(trigger);
+    });
 
-          <ul className={styles.mobileNav}>
-            {NavLinks.map(({ label, href }) => (
-              <li key={label}>
-                <Link to={`/${href}`}>{label}</Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </>
-    );
+    return () => {
+      triggers.forEach((t) => t.kill());
+    };
+  }, []);
+
+  const handleMobileButton = (href: string) => {
+    scrollToSection(href);
+    setTimeout(() => {
+      closeMenu();
+    }, 600);
   };
+
+  const mobileNavigation = () => (
+    <>
+      <div
+        className={`${styles.mobileBackdrop} ${styleActive}`}
+        onClick={closeMenu}
+      />
+
+      <div className={`${styles.mobileMenu} ${styleActive}`}>
+        <button className={styles.closeBtn} aria-label="Close mobile menu">
+          <RiCloseLargeLine color={COLOR.BLACK} size={30} onClick={closeMenu} />
+        </button>
+
+        <ul className={styles.mobileNav}>
+          {NavLinks.map(({ label, href }) => (
+            <li key={label}>
+              <button
+                onClick={() => handleMobileButton(href)}
+                className={styles.navText}
+              >
+                {label}
+                {activeSection === href && (
+                  <motion.div
+                    layoutId="nav-tab-mobile"
+                    transition={{ type: 'tween', duration: 0.2 }}
+                    className={styles.navIndicator}
+                  />
+                )}
+              </button>
+              <div className={styles.mobileNavBorder} />
+            </li>
+          ))}
+        </ul>
+      </div>
+    </>
+  );
 
   return (
     <>
       <header className={styles.headerContainer}>
         <nav>
-          <Link to="/" className={styles.logoContainer}>
+          <button
+            onClick={() => scrollToSection('#home')}
+            className={styles.logoContainer}
+          >
             <img src={images.logo} alt="logo" className={styles.logo} />
             <h2>AKMAL.</h2>
-          </Link>
+          </button>
 
           <div className={styles.navGroupContainer}>
             <ul className={styles.navGroup}>
               {NavLinks.map(({ label, href }) => (
                 <li key={label}>
-                  <Link to={`/${href}`} className={styles.navText}>
+                  <button
+                    onClick={() => scrollToSection(href)}
+                    className={styles.navText}
+                  >
                     {label}
-                  </Link>
+                    {activeSection === href && (
+                      <motion.div
+                        layoutId="nav-tab"
+                        transition={{ type: 'tween', duration: 0.4 }}
+                        className={styles.navIndicator}
+                      />
+                    )}
+                  </button>
                 </li>
               ))}
             </ul>
@@ -108,10 +170,13 @@ const NavigationBar = () => {
 
           <MagneticButton>
             <AnimatedButton>
-              <Link to="/" className={styles.contactButton}>
+              <button
+                onClick={() => scrollToSection('#more')}
+                className={styles.contactButton}
+              >
                 <p>Contact</p>
                 <RiArrowRightUpLine color={COLOR.BLACK} size={18} />
-              </Link>
+              </button>
             </AnimatedButton>
           </MagneticButton>
 

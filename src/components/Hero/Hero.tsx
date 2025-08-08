@@ -11,7 +11,7 @@ import AnimatedButton from '../common/AnimatedButton/AnimatedButton';
 
 const Hero = () => {
   return (
-    <section className={styles.sectionContainer}>
+    <section className={styles.sectionContainer} id="home">
       <div className={styles.itemContainer}>
         <div className={styles.profileImagesContainer}>
           <img

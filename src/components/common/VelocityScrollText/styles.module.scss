@@ -1,3 +1,5 @@
+@use '../../../styles/variables.scss' as *;
+
 .sliderContainer {
   position: absolute;
   bottom: 20px;
@@ -14,6 +16,9 @@
     font-size: 140px;
     font-weight: 500;
     padding-right: 50px;
+    @include max-width(md) {
+      font-size: 100px;
+    }
 
     &:nth-of-type(2) {
       position: absolute;

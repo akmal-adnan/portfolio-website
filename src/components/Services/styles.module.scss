@@ -34,6 +34,9 @@
   flex-direction: column;
   gap: 20px;
   align-items: flex-start;
+  @include max-width(sm) {
+    align-items: center;
+  }
 }
 
 .cardContainer {

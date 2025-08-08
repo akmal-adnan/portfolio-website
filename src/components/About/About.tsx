@@ -52,7 +52,7 @@ const About = () => {
   }, []);
 
   return (
-    <section className={styles.sectionContainer}>
+    <section className={styles.sectionContainer} id="about">
       <div className={styles.titleContainer}>
         <h1>About Me.</h1>
       </div>

@@ -14,7 +14,7 @@ const Services = () => {
   const [selectedIndex, setSelectedIndex] = useState(0);
 
   return (
-    <section className={styles.sectionContainer}>
+    <section className={styles.sectionContainer} id="services">
       <div className={styles.titleContainer}>
         <h1>What I do.</h1>
       </div>

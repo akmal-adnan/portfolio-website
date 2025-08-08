@@ -27,7 +27,7 @@ const cardListItem: CardProps[] = [
 
 const Posts = () => {
   return (
-    <section id="scroll-section" className={styles.sectionContainer}>
+    <section id="posts" className={styles.sectionContainer}>
       <div className={styles.titleContainer}>
         <h1>Projects.</h1>
       </div>

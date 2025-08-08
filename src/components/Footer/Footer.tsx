@@ -8,7 +8,7 @@ import {
 
 export const Footer = () => {
   return (
-    <footer className={styles.sectionContainer}>
+    <footer className={styles.sectionContainer} id="more">
       <div className={styles.itemContainer}>
         <div className={styles.menuGroup}>
           <div className={styles.menuContainer}>
