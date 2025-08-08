@@ -5,10 +5,18 @@ import {
   RiGithubFill,
   RiLinkedinBoxFill,
 } from '@remixicon/react';
+import VelocityScrollText from '../common/VelocityScrollText/VelocityScrollText';
 
 export const Footer = () => {
   return (
     <footer className={styles.sectionContainer} id="more">
+      <VelocityScrollText
+        sliderContainerStyle={styles.textSlider}
+        reverse
+        textContent="• Overcome • Adapt • Improvise"
+        defaultSpeed={0.03}
+      />
+
       <div className={styles.itemContainer}>
         <div className={styles.menuGroup}>
           <div className={styles.menuContainer}>

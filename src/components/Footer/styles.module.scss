@@ -1,8 +1,9 @@
 @use '../../styles/variables.scss' as *;
 
 .sectionContainer {
+  position: relative;
   background-color: var(--bg-black);
-  height: 480px;
+  height: 680px;
   padding-top: 30px;
   padding-bottom: 20px;
 
@@ -24,6 +25,7 @@
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
+  padding-top: 140px;
 }
 
 .menuGroup {
@@ -70,4 +72,14 @@
   position: absolute;
   right: 0px;
   top: -20px;
+}
+
+.textSlider {
+  top: 0;
+  div {
+    p {
+      font-size: 90px;
+      color: var(--dark-gray);
+    }
+  }
 }

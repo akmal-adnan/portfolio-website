@@ -5,3 +5,4 @@ export declare const menuContainer: string;
 export declare const menuGroup: string;
 export declare const nameGroup: string;
 export declare const sectionContainer: string;
+export declare const textSlider: string;

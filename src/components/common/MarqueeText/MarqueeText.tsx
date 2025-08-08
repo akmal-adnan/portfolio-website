@@ -1,11 +1,18 @@
 import styles from '@/components/common/MarqueeText/styles.module.scss';
+import StackIcon from 'tech-stack-icons';
+
+type MarqueeItem = {
+  text: string;
+  icon?: string; // name for StackIcon
+};
 
 type Props = {
-  item: string[];
+  item: MarqueeItem[];
   direction?: 'forwards' | 'reverse';
   speed?: number;
   classContainer?: string;
   classTextContainer?: string;
+  classIconContainer?: string;
 };
 
 const MarqueeText = ({
@@ -14,6 +21,7 @@ const MarqueeText = ({
   speed = 10,
   classContainer,
   classTextContainer,
+  classIconContainer,
 }: Props) => {
   const animationVariable = {
     '--direction': `${direction}`,
@@ -26,20 +34,29 @@ const MarqueeText = ({
       className={`${styles.marqueeContainer} ${classContainer}`}
     >
       <div className={styles.marqueeTextTrack}>
-        {item.map((currentText, i) => (
-          <p key={i} className={`${styles.marqueeText} ${classTextContainer}`}>
-            {currentText}
-          </p>
+        {item.map((item, i) => (
+          <div className={`${styles.marqueeText} ${classTextContainer}`}>
+            {item.icon && (
+              <div className={`${styles.iconContainer} ${classIconContainer}`}>
+                <StackIcon name={item.icon} />
+              </div>
+            )}
+
+            <p key={i}>{item.text}</p>
+          </div>
         ))}
 
-        {item.map((currentText, i) => (
-          <p
-            aria-hidden="true"
-            key={i}
-            className={`${styles.marqueeText} ${classTextContainer}`}
-          >
-            {currentText}
-          </p>
+        {item.map((item, i) => (
+          <div className={`${styles.marqueeText} ${classTextContainer}`}>
+            {item.icon && (
+              <div className={`${styles.iconContainer} ${classIconContainer}`}>
+                <StackIcon name={item.icon} />
+              </div>
+            )}
+            <p aria-hidden="true" key={i}>
+              {item.text}
+            </p>
+          </div>
         ))}
       </div>
     </div>

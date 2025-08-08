@@ -17,12 +17,22 @@
 
   font-weight: var(--font-medium);
   border: 1px solid var(--purple);
-  padding: 5px 20px;
+  padding: 7px 14px;
   border-radius: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
 }
 
 @keyframes marqueeMoveText {
   to {
     transform: translateX(-50%);
   }
+}
+
+.iconContainer {
+  width: 24px;
+  height: 24px;
 }

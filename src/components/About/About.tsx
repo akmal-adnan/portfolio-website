@@ -11,29 +11,38 @@ import {
 import { useEffect, useRef } from 'react';
 import { TextTyping } from '../common/TextTyping/TextTyping';
 
-const nameStack = ['AKMAL', 'ADNAN', 'AKMAL', 'ADNAN', 'AKMAL', 'ADNAN'];
+const nameStack = [
+  { text: 'Akmal' },
+  { text: 'Adnan' },
+  { text: 'Akmal' },
+  { text: 'Adnan' },
+];
 
 const stackList = [
-  'Javascript',
-  'Typescript',
-  'React',
-  'React Native',
-  'NextJs',
-  'AstroJs',
-  'Redux',
-  'TailwindCSS',
-  'ExpressJs',
+  { text: 'Javascript', icon: 'js' },
+  { text: 'Typescript', icon: 'typescript' },
+  { text: 'React', icon: 'react' },
+  { text: 'NextJs', icon: 'nextjs2' },
+  { text: 'AstroJs', icon: 'astro' },
+  { text: 'React Native', icon: 'react' },
+  { text: 'Redux', icon: 'redux' },
+  { text: 'TailwindCSS', icon: 'tailwindcss' },
+  { text: 'NodeJs', icon: 'nodejs' },
+  { text: 'Copilot', icon: 'copilotgithub' },
 ];
 
 const stackList2 = [
-  'HTML',
-  'SASS',
-  'Vue',
-  'Angular',
-  'ShadCn',
-  'GSAP',
-  'ThreeJs',
-  'ShadCN',
+  { text: 'HTML5', icon: 'html5' },
+  { text: 'SASS', icon: 'sass' },
+  { text: 'CSS', icon: 'css3' },
+  { text: 'Vue', icon: 'vuejs' },
+  { text: 'Angular', icon: 'angular' },
+  { text: 'Figma', icon: 'figma' },
+  { text: 'AdobeXd', icon: 'xd' },
+  { text: 'Framer', icon: 'framer' },
+  { text: 'GSAP', icon: 'gsap' },
+  { text: 'Threejs', icon: 'threejs' },
+  { text: 'Mongodb', icon: 'mongodb' },
 ];
 
 const About = () => {

@@ -1,3 +1,4 @@
+export declare const iconContainer: string;
 export declare const marqueeContainer: string;
 export declare const marqueeMoveText: string;
 export declare const marqueeText: string;
