@@ -9,12 +9,14 @@ import {
 } from '@remixicon/react';
 import { motion, type Variants } from 'motion/react';
 import AnimatedButton from '../common/AnimatedButton/AnimatedButton';
+import { TextTyping } from '../common/TextTyping/TextTyping';
 
 const Hero = () => {
   const containerVariants = {
     visible: {
       transition: {
-        staggerChildren: 0.3, // delay between each button
+        staggerChildren: 0.2,
+        delayChildren: 1.5,
       },
     },
   };
@@ -23,20 +25,32 @@ const Hero = () => {
     hidden: { scale: 0 },
     visible: {
       scale: 1,
-      transition: { type: 'spring', stiffness: 200, damping: 12 },
+      transition: {
+        type: 'spring',
+        stiffness: 150,
+        damping: 12,
+      },
     },
   };
 
   return (
     <section className={styles.sectionContainer} id="home">
       <div className={styles.itemContainer}>
-        <div className={styles.profileImagesContainer}>
+        <motion.div
+          className={styles.profileImagesContainer}
+          initial={{ opacity: 0, y: 10 }}
+          animate={{
+            opacity: 1,
+            y: 0,
+          }}
+          transition={{ delay: 0.5, duration: 0.3, ease: 'easeOut' }}
+        >
           <img
             className={styles.profileImages}
             src={images.ProfileImg}
             alt="profile image"
           />
-        </div>
+        </motion.div>
 
         <p className={styles.textIntro}>Nice to meet you 👋🏻</p>
 
@@ -45,8 +59,13 @@ const Hero = () => {
         </h1>
 
         <p className={styles.textDescription}>
-          a product designer and visual developer based in Johor. I am skilled
-          in visual development, responsive web design and UI/UX design.
+          <TextTyping
+            speed={15}
+            text="a product designer and visual developer based in Johor. I am skilled
+          in visual development, responsive web design and UI/UX design."
+          />
+          {/* a product designer and visual developer based in Johor. I am skilled
+          in visual development, responsive web design and UI/UX design. */}
         </p>
 
         <motion.div

@@ -1,8 +1,15 @@
 import images from '@/assets/images';
 import styles from '@/components/About/styles.module.scss';
 import MarqueeText from '@/components/common/MarqueeText/MarqueeText';
-import gsap from 'gsap';
+import {
+  animate,
+  motion,
+  useInView,
+  useMotionValue,
+  useTransform,
+} from 'motion/react';
 import { useEffect, useRef } from 'react';
+import { TextTyping } from '../common/TextTyping/TextTyping';
 
 const nameStack = ['AKMAL', 'ADNAN', 'AKMAL', 'ADNAN', 'AKMAL', 'ADNAN'];
 
@@ -30,26 +37,19 @@ const stackList2 = [
 ];
 
 const About = () => {
-  const numberRef = useRef<HTMLSpanElement>(null);
+  const count = useMotionValue(0);
+  const roundedNumber = useTransform(() => Math.round(count.get()));
+
+  const numberRef = useRef(null);
+  const isInView = useInView(numberRef, { once: true });
 
   useEffect(() => {
-    const el = numberRef.current;
-    if (!el) return;
-
-    const obj = { val: 0 };
-    gsap.to(obj, {
-      val: 5,
-      duration: 0.5,
-      scrollTrigger: {
-        trigger: el,
-        start: 'top 80%',
-        toggleActions: 'play reset play reset',
-      },
-      onUpdate: () => {
-        el.innerText = Math.floor(obj.val).toString();
-      },
-    });
-  }, []);
+    if (isInView) {
+      count.set(0);
+      const controls = animate(count, 5, { duration: 0.5 });
+      return () => controls.stop();
+    }
+  }, [isInView, count]);
 
   return (
     <section className={styles.sectionContainer} id="about">
@@ -62,7 +62,10 @@ const About = () => {
           <div className={styles.titleIntroText}>
             <h2>Front-End Developer</h2>
             <h3>
-              with a love for a clean UI <br /> and fast apps
+              <TextTyping
+                text="with a love for a clean UI
+                 and fast apps"
+              />
             </h3>
           </div>
 
@@ -89,7 +92,9 @@ const About = () => {
             className={styles.backgroundStar}
           />
           <div className={styles.codingContainer}>
-            <p>Currently</p>
+            <p>
+              <TextTyping text="Previously" />
+            </p>
             <h3>Working with</h3>
           </div>
           <div className={styles.centerContainer}>
@@ -106,7 +111,9 @@ const About = () => {
           style={{ gridArea: 'box3' }}
         >
           <div className={styles.codingContainer}>
-            <p>What I do</p>
+            <p>
+              <TextTyping text="What I do" />
+            </p>
             <h3>Design & Code</h3>
             <img
               className={styles.codeImage}
@@ -119,7 +126,7 @@ const About = () => {
         <div className={`${styles.gridBox} ${styles.centerContainer}`}>
           <div className={styles.experienceText}>
             <h1>
-              <span ref={numberRef}>0</span>+
+              <motion.span ref={numberRef}>{roundedNumber}</motion.span>+
             </h1>
             <h3>Years of Experience</h3>
           </div>
@@ -128,7 +135,9 @@ const About = () => {
         <div className={styles.gridBox} style={{ gridArea: 'box5' }}>
           <div className={styles.codingContainer}>
             <h3>Tech stack I used</h3>
-            <p>And many more still learning</p>
+            <p>
+              <TextTyping text="And many more still learning" />
+            </p>
           </div>
 
           <div className={styles.marqueeContainer}>

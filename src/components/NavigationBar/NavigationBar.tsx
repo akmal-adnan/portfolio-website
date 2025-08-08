@@ -7,7 +7,7 @@ import {
   RiCloseLargeLine,
   RiMenu3Line,
 } from '@remixicon/react';
-import { motion } from 'framer-motion';
+import { motion, type Variants } from 'motion/react';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import AnimatedButton from '../common/AnimatedButton/AnimatedButton';
 
@@ -25,6 +25,33 @@ const NavLinks = [
   { label: 'Services', href: '#services' },
   { label: 'More', href: '#more' },
 ];
+
+const containerVariants: Variants = {
+  hidden: { scaleX: 0 },
+  visible: {
+    scaleX: 1,
+    transition: {
+      duration: 0.5,
+      ease: 'easeOut',
+      when: 'beforeChildren',
+      staggerChildren: 0.15,
+    },
+  },
+};
+
+const buttonVariants: Variants = {
+  hidden: { opacity: 0, y: 10 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.3, ease: 'easeOut' } },
+};
+
+const itemVariants: Variants = {
+  hidden: { scale: 0, opacity: 0 },
+  visible: {
+    scale: 1,
+    opacity: 1,
+    transition: { delay: 1.3, duration: 0.3, ease: 'easeOut' },
+  },
+};
 
 const NavigationBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -138,21 +165,30 @@ const NavigationBar = () => {
     <>
       <header className={styles.headerContainer}>
         <nav>
-          <button
+          <motion.button
             onClick={() => scrollToSection('#home')}
             className={styles.logoContainer}
+            initial="hidden"
+            animate="visible"
+            variants={itemVariants}
           >
             <img src={images.logo} alt="logo" className={styles.logo} />
             <h2>AKMAL.</h2>
-          </button>
+          </motion.button>
 
-          <div className={styles.navGroupContainer}>
+          <motion.div
+            className={styles.navGroupContainer}
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+          >
             <ul className={styles.navGroup}>
               {NavLinks.map(({ label, href }) => (
                 <li key={label}>
-                  <button
+                  <motion.button
                     onClick={() => scrollToSection(href)}
                     className={styles.navText}
+                    variants={buttonVariants}
                   >
                     {label}
                     {activeSection === href && (
@@ -162,14 +198,18 @@ const NavigationBar = () => {
                         className={styles.navIndicator}
                       />
                     )}
-                  </button>
+                  </motion.button>
                 </li>
               ))}
             </ul>
-          </div>
+          </motion.div>
 
-          <MagneticButton>
-            <AnimatedButton>
+          <MagneticButton
+            initial="hidden"
+            animate="visible"
+            variants={itemVariants}
+          >
+            <AnimatedButton style={{ backgroundColor: COLOR.BG_WHITE }}>
               <button
                 onClick={() => scrollToSection('#more')}
                 className={styles.contactButton}

@@ -10,7 +10,7 @@ type MagneticButtonProps = HTMLMotionProps<'div'> & {
 const MagneticButton = ({
   children,
   magneticStrength = 1,
-  ...rest // all other motion.div props (variants, initial, animate, etc.)
+  ...props // all other motion.div props (variants, initial, animate, etc.)
 }: MagneticButtonProps) => {
   const ref = useRef<HTMLDivElement | null>(null);
   const [position, setPosition] = useState<Position>({ x: 0, y: 0 });
@@ -38,7 +38,7 @@ const MagneticButton = ({
       animate={{ x: position.x, y: position.y }}
       transition={{ type: 'spring', stiffness: 150, damping: 15, mass: 0.1 }}
       style={{ position: 'relative' }}
-      {...rest}
+      {...props}
     >
       {children}
     </motion.div>
