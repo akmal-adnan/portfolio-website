@@ -15,6 +15,7 @@ import gsap from 'gsap';
 import ScrollSmoother from 'gsap/ScrollSmoother';
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 import ScrollTrigger from 'gsap/ScrollTrigger';
+import { DarkMode } from '../common/DarkMode/DarkMode';
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, ScrollSmoother);
 
@@ -204,21 +205,25 @@ const NavigationBar = () => {
             </ul>
           </motion.div>
 
-          <MagneticButton
-            initial="hidden"
-            animate="visible"
-            variants={itemVariants}
-          >
-            <AnimatedButton style={{ backgroundColor: COLOR.BG_WHITE }}>
-              <button
-                onClick={() => scrollToSection('#more')}
-                className={styles.contactButton}
-              >
-                <p>Contact</p>
-                <RiArrowRightUpLine color={COLOR.BLACK} size={18} />
-              </button>
-            </AnimatedButton>
-          </MagneticButton>
+          <div className={styles.contactGroup}>
+            <DarkMode />
+
+            <MagneticButton
+              initial="hidden"
+              animate="visible"
+              variants={itemVariants}
+            >
+              <AnimatedButton style={{ backgroundColor: COLOR.BG_WHITE }}>
+                <button
+                  onClick={() => scrollToSection('#more')}
+                  className={styles.contactButton}
+                >
+                  <p>Contact</p>
+                  <RiArrowRightUpLine color={COLOR.BLACK} size={18} />
+                </button>
+              </AnimatedButton>
+            </MagneticButton>
+          </div>
 
           <button className={styles.menuButton} onClick={openMenu}>
             <RiMenu3Line color={COLOR.BLACK} size={30} />
