@@ -12,10 +12,10 @@ import { useEffect, useRef } from 'react';
 import { TextTyping } from '../common/TextTyping/TextTyping';
 
 const nameStack = [
-  { text: 'Akmal' },
-  { text: 'Adnan' },
-  { text: 'Akmal' },
-  { text: 'Adnan' },
+  { text: 'AKMAL' },
+  { text: 'ADNAN' },
+  { text: 'AKMAL' },
+  { text: 'ADNAN' },
 ];
 
 const stackList = [
@@ -71,10 +71,7 @@ const About = () => {
           <div className={styles.titleIntroText}>
             <h2>Front-End Developer</h2>
             <h3>
-              <TextTyping
-                text="with a love for a clean UI
-                 and fast apps"
-              />
+              with a love for a clean UI <br /> and fast apps
             </h3>
           </div>
 
@@ -101,9 +98,7 @@ const About = () => {
             className={styles.backgroundStar}
           />
           <div className={styles.codingContainer}>
-            <p>
-              <TextTyping text="Previously" />
-            </p>
+            <p>Previously</p>
             <h3>Working with</h3>
           </div>
           <div className={styles.centerContainer}>
@@ -120,9 +115,7 @@ const About = () => {
           style={{ gridArea: 'box3' }}
         >
           <div className={styles.codingContainer}>
-            <p>
-              <TextTyping text="What I do" />
-            </p>
+            <p>What I do</p>
             <h3>Design & Code</h3>
             <img
               className={styles.codeImage}
