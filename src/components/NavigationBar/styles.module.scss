@@ -6,7 +6,6 @@
   top: 0;
   left: 0;
   z-index: var(--z-fixed);
-  // background-color: var(--bg-white);
 }
 
 nav {
@@ -51,6 +50,13 @@ nav {
   cursor: pointer;
   transition: color 0.3s ease-in;
 
+  @include max-width(md) {
+    h1 {
+      font-weight: var(--font-regular);
+      color: var(--text-primary-dark);
+    }
+  }
+
   &:hover {
     color: var(--plump-purple);
   }
@@ -59,7 +65,7 @@ nav {
 .navIndicator {
   width: 5px;
   height: 5px;
-  background-color: var(--black);
+  background-color: red;
   border-radius: 50px;
   margin-inline: auto;
 
@@ -85,6 +91,10 @@ nav {
   display: flex;
 }
 
+.contactContainer {
+  background-color: var(--bg-white);
+}
+
 .contactButton {
   display: flex;
   justify-content: center;
@@ -98,20 +108,21 @@ nav {
     transition: color 0.25s linear;
     font-size: var(--small-font-size);
     font-weight: var(--font-light);
-    color: var(--black);
+    color: var(--text-primary-dark);
   }
 
   svg {
+    fill: var(--text-primary-dark);
     transition: fill 0.25s linear;
   }
 
   &:hover {
     border-color: var(--purple);
     svg {
-      fill: var(--white);
+      fill: var(--text-primary-light);
     }
     p {
-      color: var(--white);
+      color: var(--text-primary-light);
     }
   }
 
@@ -144,6 +155,10 @@ nav {
   display: flex;
   align-items: center;
   justify-content: flex-end;
+
+  svg {
+    fill: var(--bg-black);
+  }
 }
 
 .mobileMenu {
@@ -169,24 +184,28 @@ nav {
 .mobileNav {
   list-style: none;
   margin-top: 3rem;
-}
 
-.mobileNav button {
-  color: var(--black);
-  font-size: 1.5em;
-  font-weight: 500;
-  padding: 2rem 0;
-  display: flex;
-  align-items: center;
+  button {
+    color: var(--black);
+    font-size: 1.5em;
+    font-weight: 500;
+    padding: 2rem 0;
+    display: flex;
+    align-items: center;
+  }
 }
 
 .mobileNavBorder {
-  border-bottom: 1px solid var(--light-gray);
+  border-bottom: 0.5px solid var(--text-muted-dark);
 }
 
 .menuButton {
   display: none;
   align-items: center;
+
+  svg {
+    fill: var(--bg-black);
+  }
 
   @include max-width(md) {
     display: flex;

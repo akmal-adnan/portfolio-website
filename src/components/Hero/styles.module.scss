@@ -40,18 +40,19 @@
   margin-bottom: 30px;
   font-size: var(--h3-font-size);
   font-weight: var(--font-regular);
+  color: var(--text-secondary-dark);
 }
 
 .textMainIntro {
   font-size: var(--large-font-size);
-  color: var(--bg-black);
+  color: var(--text-primary-dark);
 }
 
 .textDescription {
   font-size: var(--normal-font-size);
   font-weight: var(--font-light);
   line-height: 1.8;
-  color: var(--dark-gray);
+  color: var(--text-secondary-dark);
   margin-top: 24px;
   max-width: 600px;
 
@@ -76,16 +77,17 @@
   border-radius: 50px;
   width: 60px;
   height: 60px;
-  border: 1.5px solid var(--bg-black);
+  border: 1px solid var(--text-primary-dark);
 
   svg {
+    fill: var(--text-primary-dark);
     transition: fill 0.4s linear;
   }
 
   &:hover {
     border-color: var(--purple);
     svg {
-      fill: var(--white);
+      fill: var(--text-primary-light);
     }
   }
 }

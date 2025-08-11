@@ -20,7 +20,7 @@
   border-radius: 20px;
   height: 600px;
   // background-color: var(--light-gray);
-  background-image: linear-gradient(to bottom, #f0f0f0, #e0e0e0, #f0f0f0);
+  background-image: var(--card-color-gradient);
   border: 1px solid var(--white);
   overflow: hidden;
   position: relative;
@@ -49,10 +49,24 @@
 
   h2 {
     margin-bottom: 10px;
+    color: var(--text-primary-dark);
   }
 
   p {
-    color: var(--dark-gray);
+    color: var(--text-secondary-dark);
+  }
+}
+
+.cardDescription {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  h3 {
+    color: var(--text-primary-dark);
+  }
+
+  p {
+    color: var(--text-primary-dark);
   }
 }
 
@@ -82,7 +96,9 @@
   }
 
   h3 {
+    transition: color 0.4s linear;
     font-weight: 400;
+    color: var(--text-primary-dark);
   }
 
   svg {
@@ -91,10 +107,14 @@
 
   &:hover {
     color: var(--bg-white);
-    border-color: var(--purple);
+    border-color: var(--plump-purple);
+
+    h3 {
+      color: var(--text-primary-light);
+    }
 
     svg {
-      fill: var(--bg-white);
+      fill: var(--text-primary-light);
     }
   }
 }

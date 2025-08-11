@@ -5,11 +5,13 @@ import { useRef } from 'react';
 type AnimatedButtonProps = React.HTMLAttributes<HTMLDivElement> & {
   children: React.ReactNode;
   circleClassName?: string;
+  containerClassName?: string;
 };
 
 const AnimatedButton = ({
   children,
   circleClassName,
+  containerClassName,
   ...props
 }: AnimatedButtonProps) => {
   const controls = useAnimation();
@@ -52,7 +54,7 @@ const AnimatedButton = ({
 
   return (
     <div
-      className={styles.roundedButton}
+      className={`${styles.roundedButton} ${containerClassName}`}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       {...props}

@@ -135,7 +135,7 @@ const NavigationBar = () => {
 
       <div className={`${styles.mobileMenu} ${styleActive}`}>
         <button className={styles.closeBtn} aria-label="Close mobile menu">
-          <RiCloseLargeLine color={COLOR.BLACK} size={30} onClick={closeMenu} />
+          <RiCloseLargeLine size={30} onClick={closeMenu} />
         </button>
 
         <ul className={styles.mobileNav}>
@@ -145,7 +145,7 @@ const NavigationBar = () => {
                 onClick={() => handleMobileButton(href)}
                 className={styles.navText}
               >
-                {label}
+                <h1>{label}</h1>
                 {activeSection === href && (
                   <motion.div
                     layoutId="nav-tab-mobile"
@@ -165,7 +165,7 @@ const NavigationBar = () => {
   return (
     <>
       <header className={styles.headerContainer}>
-        <nav>
+        <nav style={{ position: 'relative' }}>
           <motion.button
             onClick={() => scrollToSection('#home')}
             className={styles.logoContainer}
@@ -205,15 +205,13 @@ const NavigationBar = () => {
             </ul>
           </motion.div>
 
-          <div className={styles.contactGroup}>
-            <DarkMode />
-
-            <MagneticButton
-              initial="hidden"
-              animate="visible"
-              variants={itemVariants}
-            >
-              <AnimatedButton style={{ backgroundColor: COLOR.BG_WHITE }}>
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={itemVariants}
+          >
+            <MagneticButton>
+              <AnimatedButton containerClassName={styles.contactContainer}>
                 <button
                   onClick={() => scrollToSection('#more')}
                   className={styles.contactButton}
@@ -223,11 +221,15 @@ const NavigationBar = () => {
                 </button>
               </AnimatedButton>
             </MagneticButton>
-          </div>
+          </motion.div>
 
           <button className={styles.menuButton} onClick={openMenu}>
-            <RiMenu3Line color={COLOR.BLACK} size={30} />
+            <RiMenu3Line size={30} />
           </button>
+
+          <div style={{ position: 'absolute', right: '-70px' }}>
+            <DarkMode />
+          </div>
         </nav>
       </header>
 

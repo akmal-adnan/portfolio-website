@@ -1,7 +1,6 @@
 import images from '@/assets/images';
 import MagneticButton from '@/components/common/MagneticButton/MagneticButton';
 import styles from '@/components/Hero/styles.module.scss';
-import { COLOR } from '@/utils/color';
 import {
   RiFileDownloadLine,
   RiGithubLine,
@@ -9,7 +8,6 @@ import {
 } from '@remixicon/react';
 import { motion, type Variants } from 'motion/react';
 import AnimatedButton from '../common/AnimatedButton/AnimatedButton';
-import { TextTyping } from '../common/TextTyping/TextTyping';
 
 const Hero = () => {
   const containerVariants = {
@@ -59,13 +57,8 @@ const Hero = () => {
         </h1>
 
         <p className={styles.textDescription}>
-          <TextTyping
-            speed={15}
-            text="a product designer and visual developer based in Johor. I am skilled
-          in visual development, responsive web design and UI/UX design."
-          />
-          {/* a product designer and visual developer based in Johor. I am skilled
-          in visual development, responsive web design and UI/UX design. */}
+          a product designer and visual developer based in Johor. I am skilled
+          in visual development, responsive web design and UI/UX design.
         </p>
 
         <motion.div
@@ -77,7 +70,7 @@ const Hero = () => {
           <MagneticButton variants={springVariants}>
             <AnimatedButton>
               <button type="button" className={styles.roundIconContainer}>
-                <RiGithubLine size={30} color={COLOR.BG_BLACK} />
+                <RiGithubLine size={30} />
               </button>
             </AnimatedButton>
           </MagneticButton>
@@ -85,7 +78,7 @@ const Hero = () => {
           <MagneticButton variants={springVariants}>
             <AnimatedButton>
               <button type="button" className={styles.roundIconContainer}>
-                <RiLinkedinFill size={30} color={COLOR.BG_BLACK} />
+                <RiLinkedinFill size={30} />
               </button>
             </AnimatedButton>
           </MagneticButton>
@@ -93,7 +86,7 @@ const Hero = () => {
           <MagneticButton variants={springVariants}>
             <AnimatedButton>
               <button type="button" className={styles.roundIconContainer}>
-                <RiFileDownloadLine size={30} color={COLOR.BG_BLACK} />
+                <RiFileDownloadLine size={30} />
               </button>
             </AnimatedButton>
           </MagneticButton>

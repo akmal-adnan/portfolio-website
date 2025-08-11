@@ -1,6 +1,7 @@
 export declare const active: string;
 export declare const closeBtn: string;
 export declare const contactButton: string;
+export declare const contactContainer: string;
 export declare const contactGroup: string;
 export declare const headerContainer: string;
 export declare const logo: string;

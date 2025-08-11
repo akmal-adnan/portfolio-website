@@ -1,5 +1,4 @@
 import styles from '@/components/common/HorizontalCardList/styles.module.scss';
-import { COLOR } from '@/utils/color';
 import { RiArrowRightLine } from '@remixicon/react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
@@ -81,15 +80,15 @@ const HorizontalCardList = ({ cardList }: Props) => {
                 <p>{item.cardDescription}</p>
               </div>
 
-              <div>
-                <h3>Stack Used</h3>
+              <div className={styles.cardDescription}>
+                <h3>Created with:</h3>
                 <p>{item.cardStackList}</p>
 
                 <div className={styles.buttonSourceContainer}>
                   <AnimatedButton>
                     <button type="button" className={styles.buttonSourceCode}>
                       <h3>View Now</h3>
-                      <RiArrowRightLine color={COLOR.BG_BLACK} />
+                      <RiArrowRightLine />
                     </button>
                   </AnimatedButton>
                 </div>

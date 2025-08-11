@@ -3,6 +3,7 @@ import styles from '@/components/common/BGCircle/styles.module.scss';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import { useEffect, useRef } from 'react';
+import { useDarkMode } from '../DarkMode/useDarkMode';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -11,8 +12,8 @@ type Props = {
 };
 
 const BGCircle = ({ defaultSpeed = 0.05 }: Props) => {
+  const { dark } = useDarkMode();
   const circleRef = useRef<HTMLImageElement>(null);
-
   const angleRef = useRef(0);
   const speedRef = useRef(0);
   const baseSpeed = defaultSpeed;
@@ -64,7 +65,10 @@ const BGCircle = ({ defaultSpeed = 0.05 }: Props) => {
   }, [baseSpeed]);
 
   return (
-    <div id="circleBg" className={styles.cirleContainer}>
+    <div
+      id="circleBg"
+      className={`${styles.cirleContainer} ${dark ? styles.darkMode : ''}`}
+    >
       <img ref={circleRef} src={images.bgCircle} />
     </div>
   );

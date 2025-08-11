@@ -9,7 +9,6 @@ import {
   useTransform,
 } from 'motion/react';
 import { useEffect, useRef } from 'react';
-import { TextTyping } from '../common/TextTyping/TextTyping';
 
 const nameStack = [
   { text: 'AKMAL' },
@@ -137,9 +136,7 @@ const About = () => {
         <div className={styles.gridBox} style={{ gridArea: 'box5' }}>
           <div className={styles.codingContainer}>
             <h3>Tech stack I used</h3>
-            <p>
-              <TextTyping text="And many more still learning" />
-            </p>
+            <p>And many more still learning</p>
           </div>
 
           <div className={styles.marqueeContainer}>

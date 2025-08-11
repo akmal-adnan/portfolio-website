@@ -3,10 +3,15 @@
 .cirleContainer {
   position: fixed;
   filter: invert(100%) grayscale(100%);
-
+  display: flex;
+  justify-self: center;
   @include max-width(md) {
     display: flex;
     justify-self: center;
     width: 900px;
   }
+}
+
+.darkMode {
+  filter: unset;
 }
