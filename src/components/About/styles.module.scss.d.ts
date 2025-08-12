@@ -1,3 +1,4 @@
+export declare const addFilter: string;
 export declare const backgroundStar: string;
 export declare const centerContainer: string;
 export declare const codeImage: string;

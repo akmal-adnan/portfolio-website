@@ -35,7 +35,10 @@ const MarqueeText = ({
     >
       <div className={styles.marqueeTextTrack}>
         {item.map((item, i) => (
-          <div className={`${styles.marqueeText} ${classTextContainer}`}>
+          <div
+            key={i}
+            className={`${styles.marqueeText} ${classTextContainer}`}
+          >
             {item.icon && (
               <div className={`${styles.iconContainer} ${classIconContainer}`}>
                 <StackIcon name={item.icon} />
@@ -47,7 +50,10 @@ const MarqueeText = ({
         ))}
 
         {item.map((item, i) => (
-          <div className={`${styles.marqueeText} ${classTextContainer}`}>
+          <div
+            key={i}
+            className={`${styles.marqueeText} ${classTextContainer}`}
+          >
             {item.icon && (
               <div className={`${styles.iconContainer} ${classIconContainer}`}>
                 <StackIcon name={item.icon} />

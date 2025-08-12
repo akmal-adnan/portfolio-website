@@ -9,6 +9,7 @@ import {
   useTransform,
 } from 'motion/react';
 import { useEffect, useRef } from 'react';
+import { useDarkMode } from '../common/DarkMode/useDarkMode';
 
 const nameStack = [
   { text: 'AKMAL' },
@@ -47,6 +48,7 @@ const stackList2 = [
 const About = () => {
   const count = useMotionValue(0);
   const roundedNumber = useTransform(() => Math.round(count.get()));
+  const { dark } = useDarkMode();
 
   const numberRef = useRef(null);
   const isInView = useInView(numberRef, { once: true });
@@ -104,7 +106,12 @@ const About = () => {
             <img
               src={images.reazonLogo}
               alt="reazon-logo"
-              className={styles.reazonLogo}
+              className={`${styles.reazonLogo} ${dark && styles.addFilter}`}
+            />
+            <img
+              src={images.menuLogo}
+              alt="reazon-logo"
+              className={`${styles.reazonLogo} ${dark && styles.addFilter}`}
             />
           </div>
         </div>

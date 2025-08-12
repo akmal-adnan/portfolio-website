@@ -169,3 +169,7 @@
 .marqueeItem {
   margin-bottom: 10px;
 }
+
+.addFilter {
+  filter: invert(1) hue-rotate(180deg);
+}

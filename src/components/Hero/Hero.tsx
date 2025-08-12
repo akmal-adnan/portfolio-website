@@ -69,25 +69,37 @@ const Hero = () => {
         >
           <MagneticButton variants={springVariants}>
             <AnimatedButton>
-              <button type="button" className={styles.roundIconContainer}>
+              <a
+                href="https://github.com/akmal-adnan"
+                target="_blank"
+                className={styles.roundIconContainer}
+              >
                 <RiGithubLine size={30} />
-              </button>
+              </a>
             </AnimatedButton>
           </MagneticButton>
 
           <MagneticButton variants={springVariants}>
             <AnimatedButton>
-              <button type="button" className={styles.roundIconContainer}>
+              <a
+                href="https://www.linkedin.com/in/akmal578"
+                target="_blank"
+                className={styles.roundIconContainer}
+              >
                 <RiLinkedinFill size={30} />
-              </button>
+              </a>
             </AnimatedButton>
           </MagneticButton>
 
           <MagneticButton variants={springVariants}>
             <AnimatedButton>
-              <button type="button" className={styles.roundIconContainer}>
+              <a
+                href="https://www.linkedin.com/in/akmal578"
+                target="_blank"
+                className={styles.roundIconContainer}
+              >
                 <RiFileDownloadLine size={30} />
-              </button>
+              </a>
             </AnimatedButton>
           </MagneticButton>
         </motion.div>

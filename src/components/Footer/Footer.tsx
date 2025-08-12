@@ -53,15 +53,23 @@ export const Footer = () => {
           <div className={styles.menuContainer}>
             <h4>Social Media</h4>
 
-            <button className={styles.iconContainer}>
+            <a
+              href="https://github.com/akmal-adnan"
+              target="_blank"
+              className={styles.iconContainer}
+            >
               <RiGithubFill />
               <p>Github</p>
-            </button>
+            </a>
 
-            <button className={styles.iconContainer}>
+            <a
+              href="https://www.linkedin.com/in/akmal578"
+              target="_blank"
+              className={styles.iconContainer}
+            >
               <RiLinkedinBoxFill />
               <p>Linkedin</p>
-            </button>
+            </a>
           </div>
         </div>
 
