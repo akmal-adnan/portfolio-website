@@ -5,8 +5,9 @@ export const TextList = [
       'Web development and deployment',
       'Single Page Applications (SPAs)',
       'Landing pages and business websites',
-      'Portfolio websites',
       'AI implementation',
+      'Knowledge transfer',
+      'Pompt engineering',
     ],
   },
   {

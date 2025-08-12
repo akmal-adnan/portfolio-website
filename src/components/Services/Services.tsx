@@ -6,12 +6,19 @@ import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import { motion } from 'motion/react';
 import { useState } from 'react';
+import { useDarkMode } from '../common/DarkMode/useDarkMode';
 import VelocityScrollText from '../common/VelocityScrollText/VelocityScrollText';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Services = () => {
   const [selectedIndex, setSelectedIndex] = useState(0);
+  const { dark } = useDarkMode();
+
+  const selectedColor = COLOR.TEXT_PRIMARY_LIGHT;
+  const unselectedColor = dark
+    ? COLOR.TEXT_MUTED_DARK
+    : COLOR.TEXT_PRIMARY_DARK;
 
   return (
     <section className={styles.sectionContainer} id="services">
@@ -23,13 +30,16 @@ const Services = () => {
         <div className={styles.cardGroup}>
           {TextList.map((item, i) => {
             const selected = selectedIndex === i;
+
             return (
               <button
                 key={i}
                 className={styles.cardContainer}
                 onClick={() => setSelectedIndex(i)}
               >
-                <h2 style={{ color: selected ? COLOR.WHITE : COLOR.BLACK }}>
+                <h2
+                  style={{ color: selected ? selectedColor : unselectedColor }}
+                >
                   {item.name}
                 </h2>
                 {selected && (

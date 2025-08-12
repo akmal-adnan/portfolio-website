@@ -30,4 +30,11 @@ export const COLOR = {
   DARK_GRAY: '#5D5D5D',
   PURPLE: '#6c3baa',
   PLUMP_PURPLE: '#8e4585',
+
+  TEXT_PRIMARY_DARK: '#1e1c1c',
+  TEXT_SECONDARY_DARK: '#5d5d5d',
+  TEXT_MUTED_DARK: '#969696',
+  TEXT_PRIMARY_LIGHT: '#f5f5f5',
+  TEXT_SECONDARY_LIGHT: '#bababa',
+  TEXT_MUTED_LIGHT: '#9e9e9e',
 };

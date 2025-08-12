@@ -48,6 +48,7 @@
   h2 {
     font-size: 2em;
     transition: color 0.3s ease;
+    color: var(--text-primary-dark);
   }
 }
 
@@ -67,7 +68,7 @@
   padding: 20px;
   position: relative;
 
-  border: 1px solid var(--white);
+  border: 1px solid var(--black);
   border-radius: 10px;
   background-image: var(--white-gradient);
 }
@@ -90,6 +91,10 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+
+  p {
+    color: var(--text-secondary-dark);
+  }
 }
 
 .backgroundStar {

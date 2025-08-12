@@ -2,7 +2,7 @@
 
 .sectionContainer {
   position: relative;
-  background-color: var(--bg-black);
+  background-color: black;
   height: 680px;
   padding-top: 30px;
   padding-bottom: 20px;
@@ -11,11 +11,11 @@
   h2,
   h3,
   h4 {
-    color: var(--ice-white);
+    color: var(--text-primary-light);
   }
 
   p {
-    color: var(--light-gray);
+    color: var(--text-secondary-light);
   }
 }
 
@@ -55,7 +55,7 @@
     font-size: 9vw;
     font-family: Neue World;
     font-weight: 400;
-    color: var(--white);
+    color: var(--text-primary-light);
     margin-bottom: 20px;
 
     @include max-width(md) {
@@ -64,7 +64,7 @@
   }
 
   p {
-    color: var(--light-gray);
+    color: var(--text-muted-light);
   }
 }
 
@@ -79,7 +79,7 @@
   div {
     p {
       font-size: 90px;
-      color: var(--dark-gray);
+      color: var(--text-secondary-dark);
     }
   }
 }
