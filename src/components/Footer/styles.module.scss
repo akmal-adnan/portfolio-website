@@ -31,6 +31,7 @@
 .menuGroup {
   display: flex;
   gap: 100px;
+  z-index: 2;
 }
 
 .menuContainer {
@@ -46,6 +47,21 @@
 .iconContainer {
   display: flex;
   gap: 10px;
+  cursor: pointer;
+
+  svg {
+    fill: var(--text-secondary-light);
+  }
+
+  &:hover {
+    background-color: red;
+    p {
+      color: black;
+    }
+    svg {
+      fill: black;
+    }
+  }
 }
 
 .nameGroup {
@@ -80,6 +96,18 @@
     p {
       font-size: 90px;
       color: var(--text-secondary-dark);
+    }
+  }
+}
+
+.buttonList {
+  cursor: pointer;
+
+  p {
+    &:hover {
+      cursor: pointer;
+      background-color: red;
+      color: black;
     }
   }
 }

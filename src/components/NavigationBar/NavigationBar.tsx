@@ -1,23 +1,23 @@
 import images from '@/assets/images';
+import AnimatedButton from '@/components/common/AnimatedButton/AnimatedButton';
 import MagneticButton from '@/components/common/MagneticButton/MagneticButton';
 import styles from '@/components/NavigationBar/styles.module.scss';
-import { COLOR } from '@/utils/color';
 import {
   RiArrowRightUpLine,
   RiCloseLargeLine,
   RiMenu3Line,
 } from '@remixicon/react';
+
+import { DarkMode } from '@/components/common/DarkMode/DarkMode';
+import { useScrollToSection } from '@/components/common/ScrollToSection/useScrollToSection';
+import { COLOR } from '@/utils/color';
 import { motion, type Variants } from 'motion/react';
 import { useCallback, useEffect, useMemo, useState } from 'react';
-import AnimatedButton from '../common/AnimatedButton/AnimatedButton';
 
 import gsap from 'gsap';
-import ScrollSmoother from 'gsap/ScrollSmoother';
-import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 import ScrollTrigger from 'gsap/ScrollTrigger';
-import { DarkMode } from '../common/DarkMode/DarkMode';
 
-gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, ScrollSmoother);
+gsap.registerPlugin(ScrollTrigger);
 
 const NavLinks = [
   { label: 'Home', href: '#home' },
@@ -57,13 +57,7 @@ const itemVariants: Variants = {
 const NavigationBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState<string>('#home');
-
-  const scrollToSection = (target: string) => {
-    const smoother = ScrollSmoother.get();
-    if (smoother) {
-      smoother.scrollTo(target, true);
-    }
-  };
+  const scrollToSection = useScrollToSection();
 
   const openMenu = useCallback(() => {
     setIsMenuOpen(true);
@@ -139,24 +133,28 @@ const NavigationBar = () => {
         </button>
 
         <ul className={styles.mobileNav}>
-          {NavLinks.map(({ label, href }) => (
-            <li key={label}>
-              <button
-                onClick={() => handleMobileButton(href)}
-                className={styles.navText}
-              >
-                <h1>{label}</h1>
-                {activeSection === href && (
-                  <motion.div
-                    layoutId="nav-tab-mobile"
-                    transition={{ type: 'tween', duration: 0.2 }}
-                    className={styles.navIndicator}
-                  />
-                )}
-              </button>
-              <div className={styles.mobileNavBorder} />
-            </li>
-          ))}
+          <>
+            <DarkMode />
+
+            {NavLinks.map(({ label, href }) => (
+              <li key={label}>
+                <button
+                  onClick={() => handleMobileButton(href)}
+                  className={styles.navText}
+                >
+                  <h1>{label}</h1>
+                  {activeSection === href && (
+                    <motion.div
+                      layoutId="nav-tab-mobile"
+                      transition={{ type: 'tween', duration: 0.2 }}
+                      className={styles.navIndicator}
+                    />
+                  )}
+                </button>
+                <div className={styles.mobileNavBorder} />
+              </li>
+            ))}
+          </>
         </ul>
       </div>
     </>

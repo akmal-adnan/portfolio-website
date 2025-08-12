@@ -1,3 +1,5 @@
+import { useScrollToSection } from '@/components/common/ScrollToSection/useScrollToSection';
+import VelocityScrollText from '@/components/common/VelocityScrollText/VelocityScrollText';
 import styles from '@/components/Footer/styles.module.scss';
 import { COLOR } from '@/utils/color';
 import {
@@ -5,9 +7,22 @@ import {
   RiGithubFill,
   RiLinkedinBoxFill,
 } from '@remixicon/react';
-import VelocityScrollText from '../common/VelocityScrollText/VelocityScrollText';
+
+import gsap from 'gsap';
+import ScrollSmoother from 'gsap/ScrollSmoother';
+import ScrollTrigger from 'gsap/ScrollTrigger';
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+
+const NavLinks = [
+  { label: 'Home', href: '#home' },
+  { label: 'About', href: '#about' },
+  { label: 'Posts', href: '#posts' },
+  { label: 'Services', href: '#services' },
+];
 
 export const Footer = () => {
+  const scrollToSection = useScrollToSection();
+
   return (
     <footer className={styles.sectionContainer} id="more">
       <VelocityScrollText
@@ -21,23 +36,32 @@ export const Footer = () => {
         <div className={styles.menuGroup}>
           <div className={styles.menuContainer}>
             <h4>Main Menu</h4>
-            <p>Home</p>
-            <p>About</p>
-            <p>Post</p>
-            <p>Service</p>
+
+            {NavLinks.map((item) => {
+              return (
+                <button
+                  key={item.href}
+                  onClick={() => scrollToSection(item.href)}
+                  className={styles.buttonList}
+                >
+                  <p>{item.label}</p>
+                </button>
+              );
+            })}
           </div>
 
           <div className={styles.menuContainer}>
             <h4>Social Media</h4>
 
-            <div className={styles.iconContainer}>
-              <RiGithubFill color={COLOR.LIGHT_GRAY} />
+            <button className={styles.iconContainer}>
+              <RiGithubFill />
               <p>Github</p>
-            </div>
-            <div className={styles.iconContainer}>
-              <RiLinkedinBoxFill color={COLOR.LIGHT_GRAY} />
+            </button>
+
+            <button className={styles.iconContainer}>
+              <RiLinkedinBoxFill />
               <p>Linkedin</p>
-            </div>
+            </button>
           </div>
         </div>
 
