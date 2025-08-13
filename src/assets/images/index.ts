@@ -13,6 +13,7 @@ import project3 from '@/assets/images/project3.jpg';
 import project4 from '@/assets/images/project4.jpg';
 import project5 from '@/assets/images/project5.jpg';
 import reazonLogo from '@/assets/images/reazon-logo.png';
+import sushiWeb from '@/assets/images/sushi-website.png';
 import utemLogo from '@/assets/images/utem-logo.png';
 
 import slider1 from '@/assets/images/slider1_1.png';
@@ -53,6 +54,7 @@ const images = {
   bgStar,
   pkmcg,
   menuLogo,
+  sushiWeb,
 };
 
 export default images;

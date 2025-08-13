@@ -13,15 +13,15 @@ const cardListItem: CardProps[] = [
     cardTitle: 'Pokemon Memory Card Game',
     cardDescription: 'A project created for fun and love',
     cardStackList: 'React, Vite, Typescript, Sass, Graphql, PokemonAPI',
-    sourceLink: 'www.github.com',
+    sourceLink: 'https://pmcg.netlify.app/',
     cardImages: images.pkmcg,
   },
   {
-    cardTitle: 'Pokemon Memory Card Game',
-    cardDescription: 'A project created for fun and love',
-    cardStackList: 'React, Vite, Typescript, Sass, Graphql, PokemonAPI',
-    sourceLink: 'www.github.com',
-    cardImages: images.pkmcg,
+    cardTitle: 'Sushi Landing Page',
+    cardDescription: 'A project created with education in mind',
+    cardStackList: 'HTML, CSS, Vanilla Javascript',
+    sourceLink: 'https://sushi-website-example.netlify.app/',
+    cardImages: images.sushiWeb,
   },
 ];
 

@@ -86,10 +86,14 @@ const HorizontalCardList = ({ cardList }: Props) => {
 
                 <div className={styles.buttonSourceContainer}>
                   <AnimatedButton>
-                    <button type="button" className={styles.buttonSourceCode}>
+                    <a
+                      className={styles.buttonSourceCode}
+                      target="_blank"
+                      href={item.sourceLink}
+                    >
                       <h3>View Now</h3>
                       <RiArrowRightLine />
-                    </button>
+                    </a>
                   </AnimatedButton>
                 </div>
               </div>
