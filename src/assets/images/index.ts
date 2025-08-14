@@ -1,3 +1,4 @@
+import airbnbWeb from '@/assets/images/airbnb-website.png';
 import bgCircle from '@/assets/images/bg-circle.png';
 import bgStar from '@/assets/images/bg-star.png';
 import codingDark from '@/assets/images/coding-dark.png';
@@ -55,6 +56,7 @@ const images = {
   pkmcg,
   menuLogo,
   sushiWeb,
+  airbnbWeb,
 };
 
 export default images;

@@ -17,6 +17,15 @@ const cardListItem: CardProps[] = [
     cardImages: images.pkmcg,
   },
   {
+    cardTitle: 'Airbnb Clone',
+    cardDescription:
+      'A project that clone some of the function for research purpose',
+    cardStackList:
+      'NextJs, React, Typescript, Tailwind, Prisma, Bcrypt, Zustand',
+    sourceLink: 'https://airbns-clone.vercel.app/',
+    cardImages: images.airbnbWeb,
+  },
+  {
     cardTitle: 'Sushi Landing Page',
     cardDescription: 'A project created with education in mind',
     cardStackList: 'HTML, CSS, Vanilla Javascript',
