@@ -16,6 +16,7 @@ import project5 from '@/assets/images/project5.jpg';
 import reazonLogo from '@/assets/images/reazon-logo.png';
 import sushiWeb from '@/assets/images/sushi-website.png';
 import utemLogo from '@/assets/images/utem-logo.png';
+import zentryWeb from '@/assets/images/zentry-website.png';
 
 import slider1 from '@/assets/images/slider1_1.png';
 import slider10 from '@/assets/images/slider1_10.png';
@@ -57,6 +58,7 @@ const images = {
   menuLogo,
   sushiWeb,
   airbnbWeb,
+  zentryWeb,
 };
 
 export default images;

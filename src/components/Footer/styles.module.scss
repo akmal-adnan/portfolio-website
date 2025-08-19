@@ -20,12 +20,12 @@
 }
 
 .itemContainer {
-  @include center-layout;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
   padding-top: 140px;
+  @include center-layout;
 }
 
 .menuGroup {

@@ -32,6 +32,14 @@ const cardListItem: CardProps[] = [
     sourceLink: 'https://sushi-website-example.netlify.app/',
     cardImages: images.sushiWeb,
   },
+  {
+    cardTitle: 'Zentry Landing Page Clone',
+    cardDescription:
+      'A project that clone some of the function for research purpose and fun',
+    cardStackList: 'React, Vite, Typescript, Tailwind, GSAP',
+    sourceLink: 'https://zentryzz.netlify.app/',
+    cardImages: images.zentryWeb,
+  },
 ];
 
 const Posts = () => {
