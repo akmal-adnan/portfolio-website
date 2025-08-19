@@ -72,7 +72,9 @@ const Hero = () => {
               <a
                 href="https://github.com/akmal-adnan"
                 target="_blank"
+                rel="noopener noreferrer"
                 className={styles.roundIconContainer}
+                title="View GitHub Profile"
               >
                 <RiGithubLine size={30} />
               </a>
@@ -84,6 +86,8 @@ const Hero = () => {
               <a
                 href="https://www.linkedin.com/in/akmal578"
                 target="_blank"
+                rel="noopener noreferrer"
+                title="View LinkedIn Profile"
                 className={styles.roundIconContainer}
               >
                 <RiLinkedinFill size={30} />
@@ -94,8 +98,10 @@ const Hero = () => {
           <MagneticButton variants={springVariants}>
             <AnimatedButton>
               <a
-                href="https://www.linkedin.com/in/akmal578"
+                href="/akmal-resume-2025.pdf"
                 target="_blank"
+                rel="noopener noreferrer"
+                title="View Resume"
                 className={styles.roundIconContainer}
               >
                 <RiFileDownloadLine size={30} />

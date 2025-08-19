@@ -210,13 +210,14 @@ const NavigationBar = () => {
           >
             <MagneticButton>
               <AnimatedButton containerClassName={styles.contactContainer}>
-                <button
-                  onClick={() => scrollToSection('#more')}
+                <a
+                  href="https://www.linkedin.com/in/akmal578"
+                  target="_blank"
                   className={styles.contactButton}
                 >
                   <p>Contact</p>
                   <RiArrowRightUpLine color={COLOR.BLACK} size={18} />
-                </button>
+                </a>
               </AnimatedButton>
             </MagneticButton>
           </motion.div>
