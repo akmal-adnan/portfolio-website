@@ -11,6 +11,7 @@ import {
 import gsap from 'gsap';
 import ScrollSmoother from 'gsap/ScrollSmoother';
 import ScrollTrigger from 'gsap/ScrollTrigger';
+import { motion, type Variants } from 'motion/react';
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
 const NavLinks = [
@@ -19,6 +20,17 @@ const NavLinks = [
   { label: 'Posts', href: '#posts' },
   { label: 'Services', href: '#services' },
 ];
+
+const hoverWipeVariants: Variants = {
+  rest: {
+    width: '0%',
+    transition: { duration: 0.3, ease: 'easeInOut' },
+  },
+  hover: {
+    width: '100%',
+    transition: { duration: 0.3, ease: 'easeInOut' },
+  },
+};
 
 export const Footer = () => {
   const scrollToSection = useScrollToSection();
@@ -39,13 +51,22 @@ export const Footer = () => {
 
             {NavLinks.map((item) => {
               return (
-                <button
+                <motion.button
                   key={item.href}
                   onClick={() => scrollToSection(item.href)}
                   className={styles.buttonList}
+                  whileHover="hover"
+                  initial="rest"
+                  animate="rest"
                 >
                   <p>{item.label}</p>
-                </button>
+
+                  <motion.span
+                    className={styles.hoverBg}
+                    variants={hoverWipeVariants}
+                    transition={{ duration: 0.3, ease: 'easeInOut' }}
+                  />
+                </motion.button>
               );
             })}
           </div>
@@ -53,23 +74,37 @@ export const Footer = () => {
           <div className={styles.menuContainer}>
             <h4>Social Media</h4>
 
-            <a
+            <motion.a
               href="https://github.com/akmal-adnan"
               target="_blank"
               className={styles.iconContainer}
+              whileHover="hover"
+              initial="rest"
+              animate="rest"
             >
               <RiGithubFill />
               <p>Github</p>
-            </a>
+              <motion.span
+                className={styles.hoverBg}
+                variants={hoverWipeVariants}
+              />
+            </motion.a>
 
-            <a
+            <motion.a
               href="https://www.linkedin.com/in/akmal578"
               target="_blank"
               className={styles.iconContainer}
+              whileHover="hover"
+              initial="rest"
+              animate="rest"
             >
               <RiLinkedinBoxFill />
               <p>Linkedin</p>
-            </a>
+              <motion.span
+                className={styles.hoverBg}
+                variants={hoverWipeVariants}
+              />
+            </motion.a>
           </div>
         </div>
 
