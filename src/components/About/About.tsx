@@ -45,6 +45,8 @@ const stackList2 = [
   { text: 'Mongodb', icon: 'mongodb' },
 ];
 
+const EXPEREINCE_YEARS = 4;
+
 const About = () => {
   const count = useMotionValue(0);
   const roundedNumber = useTransform(() => Math.round(count.get()));
@@ -56,7 +58,7 @@ const About = () => {
   useEffect(() => {
     if (isInView) {
       count.set(0);
-      const controls = animate(count, 5, { duration: 0.5 });
+      const controls = animate(count, EXPEREINCE_YEARS, { duration: 0.5 });
       return () => controls.stop();
     }
   }, [isInView, count]);
