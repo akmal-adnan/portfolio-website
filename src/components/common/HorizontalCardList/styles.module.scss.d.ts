@@ -1,3 +1,4 @@
+export declare const buttonGithubLink: string;
 export declare const buttonSourceCode: string;
 export declare const buttonSourceContainer: string;
 export declare const cardContainer: string;

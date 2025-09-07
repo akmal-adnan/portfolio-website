@@ -1,5 +1,5 @@
 import styles from '@/components/common/HorizontalCardList/styles.module.scss';
-import { RiArrowRightLine } from '@remixicon/react';
+import { RiArrowRightLine, RiGithubLine } from '@remixicon/react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import { useEffect, useRef } from 'react';
@@ -11,6 +11,7 @@ export type CardProps = {
   cardStackList: string;
   sourceLink: string;
   cardImages: string;
+  githubLink: string;
 };
 
 type Props = {
@@ -83,6 +84,14 @@ const HorizontalCardList = ({ cardList }: Props) => {
               <div className={styles.cardDescription}>
                 <h3>Created with:</h3>
                 <p>{item.cardStackList}</p>
+
+                <a
+                  target="_blank"
+                  href={item.githubLink}
+                  className={styles.buttonGithubLink}
+                >
+                  <RiGithubLine size={20} color="white" />
+                </a>
 
                 <div className={styles.buttonSourceContainer}>
                   <AnimatedButton>

@@ -16,6 +16,7 @@ const cardListItem: CardProps[] = [
       'React, Express, Typescript, Postgres, Neon, Clerk, Gemini API, Hugging Face API, ',
     sourceLink: 'https://quick-ai-chi-five.vercel.app/',
     cardImages: images.aiGenWeb,
+    githubLink: 'https://github.com/akmal-adnan/quick-ai-fullstack',
   },
   {
     cardTitle: 'Pokemon Memory Card Game',
@@ -23,6 +24,7 @@ const cardListItem: CardProps[] = [
     cardStackList: 'React, Vite, Typescript, Sass, Graphql, PokemonAPI',
     sourceLink: 'https://pmcg.netlify.app/',
     cardImages: images.pkmcg,
+    githubLink: 'https://github.com/akmal-adnan/memory-card-game',
   },
   {
     cardTitle: 'Airbnb Clone',
@@ -32,6 +34,7 @@ const cardListItem: CardProps[] = [
       'NextJs, React, Typescript, Tailwind, Prisma, Bcrypt, Zustand',
     sourceLink: 'https://airbns-clone.vercel.app/',
     cardImages: images.airbnbWeb,
+    githubLink: 'https://github.com/akmal-adnan/memory-card-game',
   },
   {
     cardTitle: 'Sushi Landing Page',
@@ -39,6 +42,7 @@ const cardListItem: CardProps[] = [
     cardStackList: 'HTML, CSS, Vanilla Javascript',
     sourceLink: 'https://sushi-website-example.netlify.app/',
     cardImages: images.sushiWeb,
+    githubLink: 'https://github.com/akmal-adnan/airbnb_clone',
   },
   {
     cardTitle: 'Zentry Landing Page Clone',
@@ -47,6 +51,7 @@ const cardListItem: CardProps[] = [
     cardStackList: 'React, Vite, Typescript, Tailwind, GSAP',
     sourceLink: 'https://zentryzz.netlify.app/',
     cardImages: images.zentryWeb,
+    githubLink: 'https://github.com/akmal-adnan/zentry-clone',
   },
 ];
 

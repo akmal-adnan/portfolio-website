@@ -132,3 +132,16 @@
     object-fit: cover;
   }
 }
+
+.buttonGithubLink {
+  border-radius: 50px;
+  background-color: black;
+  display: flex;
+  align-self: flex-start;
+  padding: 7px;
+  transition: background-color 0.2s linear;
+
+  &:hover {
+    background-color: var(--dark-gray);
+  }
+}
