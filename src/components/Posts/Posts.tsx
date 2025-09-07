@@ -10,6 +10,14 @@ gsap.registerPlugin(ScrollTrigger);
 
 const cardListItem: CardProps[] = [
   {
+    cardTitle: 'AI Gen Website',
+    cardDescription: 'A project about AI gen created with Express and React',
+    cardStackList:
+      'React, Express, Typescript, Postgres, Neon, Clerk, Gemini API, Hugging Face API, ',
+    sourceLink: 'https://quick-ai-chi-five.vercel.app/',
+    cardImages: images.aiGenWeb,
+  },
+  {
     cardTitle: 'Pokemon Memory Card Game',
     cardDescription: 'A project created for fun and love',
     cardStackList: 'React, Vite, Typescript, Sass, Graphql, PokemonAPI',

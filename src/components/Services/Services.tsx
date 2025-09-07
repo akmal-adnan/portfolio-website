@@ -75,7 +75,7 @@ const Services = () => {
         </motion.div>
       </div>
 
-      <VelocityScrollText textContent={'Frontend Developer -'} />
+      <VelocityScrollText textContent={'Aspiring Developer -'} />
     </section>
   );
 };

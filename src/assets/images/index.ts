@@ -1,3 +1,4 @@
+import aiGenWeb from '@/assets/images/aigen-website.png';
 import airbnbWeb from '@/assets/images/airbnb-website.png';
 import bgCircle from '@/assets/images/bg-circle.png';
 import bgStar from '@/assets/images/bg-star.png';
@@ -59,6 +60,7 @@ const images = {
   sushiWeb,
   airbnbWeb,
   zentryWeb,
+  aiGenWeb,
 };
 
 export default images;
