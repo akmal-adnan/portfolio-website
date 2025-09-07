@@ -101,7 +101,7 @@ const About = () => {
             className={styles.backgroundStar}
           />
           <div className={styles.codingContainer}>
-            <p>Previously</p>
+            <p>Currently</p>
             <h3>Working with</h3>
           </div>
           <div className={styles.centerContainer}>
