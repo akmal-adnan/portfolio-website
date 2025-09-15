@@ -19,6 +19,14 @@ const cardListItem: CardProps[] = [
     githubLink: 'https://github.com/akmal-adnan/quick-ai-fullstack',
   },
   {
+    cardTitle: 'Shazam Mobile App Clone',
+    cardDescription: 'React-native project that is still in progress',
+    cardStackList: 'React Native, Reanimated, Expo, Typescript, Redux toolkit',
+    sourceLink: 'https://github.com/akmal-adnan/rn-shazam-clone-expo',
+    cardImages: images.shazamApp,
+    githubLink: 'https://github.com/akmal-adnan/rn-shazam-clone-expo',
+  },
+  {
     cardTitle: 'Pokemon Memory Card Game',
     cardDescription: 'A project created for fun and love',
     cardStackList: 'React, Vite, Typescript, Sass, Graphql, PokemonAPI',

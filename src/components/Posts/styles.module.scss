@@ -11,5 +11,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 35px;
+  margin-bottom: 30px;
+
+  @include max-width(md) {
+    padding-top: calc(var(--header-height) - 1rem);
+    margin-bottom: 14px;
+  }
 }

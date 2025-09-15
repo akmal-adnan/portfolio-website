@@ -15,6 +15,7 @@ import project3 from '@/assets/images/project3.jpg';
 import project4 from '@/assets/images/project4.jpg';
 import project5 from '@/assets/images/project5.jpg';
 import reazonLogo from '@/assets/images/reazon-logo.png';
+import shazamApp from '@/assets/images/shazam-app.png';
 import sushiWeb from '@/assets/images/sushi-website.png';
 import utemLogo from '@/assets/images/utem-logo.png';
 import zentryWeb from '@/assets/images/zentry-website.png';
@@ -61,6 +62,7 @@ const images = {
   airbnbWeb,
   zentryWeb,
   aiGenWeb,
+  shazamApp,
 };
 
 export default images;
