@@ -42,7 +42,7 @@ const cardListItem: CardProps[] = [
       'NextJs, React, Typescript, Tailwind, Prisma, Bcrypt, Zustand',
     sourceLink: 'https://airbns-clone.vercel.app/',
     cardImages: images.airbnbWeb,
-    githubLink: 'https://github.com/akmal-adnan/memory-card-game',
+    githubLink: 'https://github.com/akmal-adnan/airbnb_clone',
   },
   {
     cardTitle: 'Sushi Landing Page',
@@ -50,7 +50,7 @@ const cardListItem: CardProps[] = [
     cardStackList: 'HTML, CSS, Vanilla Javascript',
     sourceLink: 'https://sushi-website-example.netlify.app/',
     cardImages: images.sushiWeb,
-    githubLink: 'https://github.com/akmal-adnan/airbnb_clone',
+    githubLink: 'https://github.com/akmal-adnan/sushi-website',
   },
   {
     cardTitle: 'Zentry Landing Page Clone',
