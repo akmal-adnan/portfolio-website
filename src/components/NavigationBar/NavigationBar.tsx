@@ -9,7 +9,6 @@ import {
 } from '@remixicon/react';
 
 import { DarkMode } from '@/components/common/DarkMode/DarkMode';
-import { useScrollToSection } from '@/components/common/ScrollToSection/useScrollToSection';
 import { COLOR } from '@/utils/color';
 import { motion, type Variants } from 'motion/react';
 import { useCallback, useEffect, useMemo, useState } from 'react';
@@ -57,7 +56,6 @@ const itemVariants: Variants = {
 const NavigationBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState<string>('#home');
-  const scrollToSection = useScrollToSection();
 
   const openMenu = useCallback(() => {
     setIsMenuOpen(true);
@@ -113,13 +111,6 @@ const NavigationBar = () => {
     };
   }, []);
 
-  const handleMobileButton = (href: string) => {
-    scrollToSection(href);
-    setTimeout(() => {
-      closeMenu();
-    }, 600);
-  };
-
   const mobileNavigation = () => (
     <>
       <div
@@ -138,11 +129,16 @@ const NavigationBar = () => {
 
             {NavLinks.map(({ label, href }) => (
               <li key={label}>
-                <button
-                  onClick={() => handleMobileButton(href)}
-                  className={styles.navText}
+                <div
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    padding: '15px',
+                  }}
                 >
-                  <h1>{label}</h1>
+                  <a className={styles.navText} href={href}>
+                    <h1>{label}</h1>
+                  </a>
                   {activeSection === href && (
                     <motion.div
                       layoutId="nav-tab-mobile"
@@ -150,7 +146,8 @@ const NavigationBar = () => {
                       className={styles.navIndicator}
                     />
                   )}
-                </button>
+                </div>
+
                 <div className={styles.mobileNavBorder} />
               </li>
             ))}
@@ -164,8 +161,8 @@ const NavigationBar = () => {
     <>
       <header className={styles.headerContainer}>
         <nav style={{ position: 'relative' }}>
-          <motion.button
-            onClick={() => scrollToSection('#home')}
+          <motion.a
+            href="#home"
             className={styles.logoContainer}
             initial="hidden"
             animate="visible"
@@ -173,7 +170,7 @@ const NavigationBar = () => {
           >
             <img src={images.logo} alt="logo" className={styles.logo} />
             <h2>AKMAL.</h2>
-          </motion.button>
+          </motion.a>
 
           <motion.div
             className={styles.navGroupContainer}
@@ -184,8 +181,8 @@ const NavigationBar = () => {
             <ul className={styles.navGroup}>
               {NavLinks.map(({ label, href }) => (
                 <li key={label}>
-                  <motion.button
-                    onClick={() => scrollToSection(href)}
+                  <motion.a
+                    href={href}
                     className={styles.navText}
                     variants={buttonVariants}
                   >
@@ -197,7 +194,7 @@ const NavigationBar = () => {
                         className={styles.navIndicator}
                       />
                     )}
-                  </motion.button>
+                  </motion.a>
                 </li>
               ))}
             </ul>

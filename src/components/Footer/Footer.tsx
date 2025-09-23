@@ -1,4 +1,3 @@
-import { useScrollToSection } from '@/components/common/ScrollToSection/useScrollToSection';
 import VelocityScrollText from '@/components/common/VelocityScrollText/VelocityScrollText';
 import styles from '@/components/Footer/styles.module.scss';
 import { COLOR } from '@/utils/color';
@@ -33,8 +32,6 @@ const hoverWipeVariants: Variants = {
 };
 
 export const Footer = () => {
-  const scrollToSection = useScrollToSection();
-
   return (
     <footer className={styles.sectionContainer} id="more">
       <VelocityScrollText
@@ -51,9 +48,9 @@ export const Footer = () => {
 
             {NavLinks.map((item) => {
               return (
-                <motion.button
+                <motion.a
                   key={item.href}
-                  onClick={() => scrollToSection(item.href)}
+                  href={item.href}
                   className={styles.buttonList}
                   whileHover="hover"
                   initial="rest"
@@ -66,7 +63,7 @@ export const Footer = () => {
                     variants={hoverWipeVariants}
                     transition={{ duration: 0.3, ease: 'easeInOut' }}
                   />
-                </motion.button>
+                </motion.a>
               );
             })}
           </div>

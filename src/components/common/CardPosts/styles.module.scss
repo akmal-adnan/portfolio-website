@@ -1,0 +1,143 @@
+@use '../../../styles/variables.scss' as *;
+
+.cardItem {
+  //   flex: 1 0 100%;
+  //   background-color: var(--light-gray);
+  height: 39rem;
+  border-radius: 20px;
+  background-image: var(--card-color-gradient);
+  border: 1px solid var(--black);
+  overflow: hidden;
+  position: relative;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+
+  // new layout
+  flex-direction: column;
+
+  @include max-width(md) {
+    //   flex-direction: column;
+    height: auto;
+  }
+}
+
+.cardTextContainer {
+  display: flex;
+  //   flex: 1;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  gap: 20px; // Effect on mobile
+}
+
+.cardTitleGroup {
+  background-color: var(--bg-white);
+  border-radius: 12px;
+  padding: 16px;
+
+  h2 {
+    margin-bottom: 10px;
+    color: var(--text-primary-dark);
+  }
+
+  p {
+    color: var(--text-secondary-dark);
+  }
+}
+
+.cardDescription {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  h3 {
+    color: var(--text-primary-dark);
+  }
+
+  p {
+    color: var(--text-primary-dark);
+  }
+}
+
+.buttonSourceContainer {
+  display: flex;
+  margin-top: 15px;
+  align-items: center;
+  gap: 30px;
+
+  //   margin-top: 30px;
+
+  //   @include max-width(md) {
+  //     margin-top: 15px;
+  //   }
+}
+
+.buttonSourceCode {
+  border: 1px solid var(--bg-black);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: flex-start;
+  border-radius: 50px;
+  padding: 14px 20px;
+  gap: 6px;
+  cursor: pointer;
+  color: var(--bg-black);
+  transition: color 0.4s linear;
+
+  @include max-width(md) {
+    padding: 12px 20px;
+  }
+
+  h3 {
+    transition: color 0.4s linear;
+    font-weight: 400;
+    color: var(--text-primary-dark);
+  }
+
+  svg {
+    transition: fill 0.4s linear;
+  }
+
+  &:hover {
+    color: var(--bg-white);
+    border-color: var(--plump-purple);
+
+    h3 {
+      color: var(--text-primary-light);
+    }
+
+    svg {
+      fill: var(--text-primary-light);
+    }
+  }
+}
+
+.cardImageContainer {
+  //   max-width: 800px;
+  //   flex: 1.7;
+  //   max-height: 300px;
+
+  @include max-width(md) {
+    height: 240px;
+  }
+
+  img {
+    height: 100%;
+    border-radius: 12px;
+    object-fit: cover;
+  }
+}
+
+.buttonGithubLink {
+  border-radius: 50px;
+  background-color: black;
+  display: flex;
+  padding: 10px;
+  transition: background-color 0.2s linear;
+
+  &:hover {
+    background-color: var(--dark-gray);
+  }
+}

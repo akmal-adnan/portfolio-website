@@ -49,6 +49,7 @@
     font-size: 2em;
     transition: color 0.3s ease;
     color: var(--text-primary-dark);
+    text-align: center;
   }
 }
 
@@ -104,4 +105,18 @@
   right: 60px;
   top: 0;
   filter: invert(30%);
+}
+
+.sliderContainer {
+  height: 380px;
+}
+
+.textSlider {
+  div {
+    p {
+      @include max-width(md) {
+        font-size: 90px;
+      }
+    }
+  }
 }

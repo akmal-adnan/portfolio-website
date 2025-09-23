@@ -1,14 +1,6 @@
 import images from '@/assets/images';
 import styles from '@/components/About/styles.module.scss';
 import MarqueeText from '@/components/common/MarqueeText/MarqueeText';
-import {
-  animate,
-  motion,
-  useInView,
-  useMotionValue,
-  useTransform,
-} from 'motion/react';
-import { useEffect, useRef } from 'react';
 import { useDarkMode } from '../common/DarkMode/useDarkMode';
 
 const nameStack = [
@@ -48,20 +40,7 @@ const stackList2 = [
 const EXPEREINCE_YEARS = 4;
 
 const About = () => {
-  const count = useMotionValue(0);
-  const roundedNumber = useTransform(() => Math.round(count.get()));
   const { dark } = useDarkMode();
-
-  const numberRef = useRef(null);
-  const isInView = useInView(numberRef, { once: true });
-
-  useEffect(() => {
-    if (isInView) {
-      count.set(0);
-      const controls = animate(count, EXPEREINCE_YEARS, { duration: 0.5 });
-      return () => controls.stop();
-    }
-  }, [isInView, count]);
 
   return (
     <section className={styles.sectionContainer} id="about">
@@ -135,9 +114,7 @@ const About = () => {
 
         <div className={`${styles.gridBox} ${styles.centerContainer}`}>
           <div className={styles.experienceText}>
-            <h1>
-              <motion.span ref={numberRef}>{roundedNumber}</motion.span>+
-            </h1>
+            <h1>{EXPEREINCE_YEARS}+</h1>
             <h3>Years of Experience</h3>
           </div>
         </div>

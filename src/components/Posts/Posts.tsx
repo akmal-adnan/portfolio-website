@@ -1,12 +1,9 @@
 import images from '@/assets/images';
-import HorizontalCardList, {
-  type CardProps,
-} from '@/components/common/HorizontalCardList/HorizontalCardList';
+import { type CardProps } from '@/components/common/HorizontalCardList/HorizontalCardList';
 import styles from '@/components/Posts/styles.module.scss';
-import gsap from 'gsap';
-import ScrollTrigger from 'gsap/ScrollTrigger';
-
-gsap.registerPlugin(ScrollTrigger);
+import { motion } from 'motion/react';
+import { useRef } from 'react';
+import CardPosts from '../common/CardPosts/CardPosts';
 
 const cardListItem: CardProps[] = [
   {
@@ -64,13 +61,33 @@ const cardListItem: CardProps[] = [
 ];
 
 const Posts = () => {
+  const targetRef = useRef<HTMLDivElement | null>(null);
+
   return (
-    <section id="posts" className={styles.sectionContainer}>
+    <section id="posts" className={styles.sectionContainer} ref={targetRef}>
       <div className={styles.titleContainer}>
         <h1>Projects.</h1>
+        <p>And more upcoming soon</p>
       </div>
 
-      <HorizontalCardList cardList={cardListItem} />
+      <motion.div className={styles.cardGridContainer}>
+        {cardListItem.map((item, i) => {
+          return (
+            <motion.div
+              initial={{
+                opacity: 0,
+                x: i % 2 === 0 ? -150 : 150,
+                y: 150,
+              }}
+              whileInView={{ opacity: 1, x: 0, y: 0 }}
+              transition={{ duration: 0.5, ease: 'easeOut' }}
+              // viewport={{ once: true }}
+            >
+              <CardPosts key={i} item={item} i={i} />
+            </motion.div>
+          );
+        })}
+      </motion.div>
     </section>
   );
 };

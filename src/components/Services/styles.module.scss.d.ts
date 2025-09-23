@@ -7,4 +7,6 @@ export declare const contentDescription: string;
 export declare const contentTitle: string;
 export declare const itemContainer: string;
 export declare const sectionContainer: string;
+export declare const sliderContainer: string;
+export declare const textSlider: string;
 export declare const titleContainer: string;

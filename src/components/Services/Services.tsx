@@ -2,14 +2,10 @@ import images from '@/assets/images';
 import styles from '@/components/Services/styles.module.scss';
 import { COLOR } from '@/utils/color';
 import { TextList } from '@/utils/posts';
-import gsap from 'gsap';
-import ScrollTrigger from 'gsap/ScrollTrigger';
 import { motion } from 'motion/react';
 import { useState } from 'react';
 import { useDarkMode } from '../common/DarkMode/useDarkMode';
 import VelocityScrollText from '../common/VelocityScrollText/VelocityScrollText';
-
-gsap.registerPlugin(ScrollTrigger);
 
 const Services = () => {
   const [selectedIndex, setSelectedIndex] = useState(0);
@@ -38,7 +34,9 @@ const Services = () => {
                 onClick={() => setSelectedIndex(i)}
               >
                 <h2
-                  style={{ color: selected ? selectedColor : unselectedColor }}
+                  style={{
+                    color: selected ? selectedColor : unselectedColor,
+                  }}
                 >
                   {item.name}
                 </h2>
@@ -75,7 +73,12 @@ const Services = () => {
         </motion.div>
       </div>
 
-      <VelocityScrollText textContent={'Aspiring Developer -'} />
+      <div className={styles.sliderContainer}>
+        <VelocityScrollText
+          textContent={'Aspiring Developer -'}
+          sliderContainerStyle={styles.textSlider}
+        />
+      </div>
     </section>
   );
 };

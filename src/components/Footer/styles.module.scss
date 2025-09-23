@@ -6,6 +6,7 @@
   height: 680px;
   padding-top: 30px;
   padding-bottom: 20px;
+  overflow: hidden;
 
   h1,
   h2,
@@ -102,6 +103,10 @@
     p {
       font-size: 90px;
       color: var(--text-secondary-dark);
+
+      @include max-width(md) {
+        font-size: 70px;
+      }
     }
   }
 }
