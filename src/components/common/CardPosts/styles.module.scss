@@ -1,11 +1,11 @@
 @use '../../../styles/variables.scss' as *;
 
 .cardItem {
-  //   flex: 1 0 100%;
-  //   background-color: var(--light-gray);
+  // flex: 1 0 100%;
+  // background-color: var(--light-gray);
   height: 39rem;
   border-radius: 20px;
-  background-image: var(--card-color-gradient);
+  background-image: var(--white-gradient);
   border: 1px solid var(--black);
   overflow: hidden;
   position: relative;

@@ -9,6 +9,7 @@ import {
 } from '@remixicon/react';
 
 import { DarkMode } from '@/components/common/DarkMode/DarkMode';
+import { useScrollToSection } from '@/components/common/ScrollToSection/useScrollToSection';
 import { COLOR } from '@/utils/color';
 import { motion, type Variants } from 'motion/react';
 import { useCallback, useEffect, useMemo, useState } from 'react';
@@ -56,6 +57,14 @@ const itemVariants: Variants = {
 const NavigationBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState<string>('#home');
+  const scrollToSection = useScrollToSection();
+
+  const handleMobileButton = (href: string) => {
+    scrollToSection(href);
+    setTimeout(() => {
+      closeMenu();
+    }, 600);
+  };
 
   const openMenu = useCallback(() => {
     setIsMenuOpen(true);
@@ -136,9 +145,13 @@ const NavigationBar = () => {
                     padding: '15px',
                   }}
                 >
-                  <a className={styles.navText} href={href}>
+                  <a
+                    className={styles.navText}
+                    onClick={() => handleMobileButton(href)}
+                  >
                     <h1>{label}</h1>
                   </a>
+
                   {activeSection === href && (
                     <motion.div
                       layoutId="nav-tab-mobile"
@@ -162,7 +175,7 @@ const NavigationBar = () => {
       <header className={styles.headerContainer}>
         <nav style={{ position: 'relative' }}>
           <motion.a
-            href="#home"
+            onClick={() => scrollToSection('#home')}
             className={styles.logoContainer}
             initial="hidden"
             animate="visible"
@@ -182,7 +195,7 @@ const NavigationBar = () => {
               {NavLinks.map(({ label, href }) => (
                 <li key={label}>
                   <motion.a
-                    href={href}
+                    onClick={() => scrollToSection(href)}
                     className={styles.navText}
                     variants={buttonVariants}
                   >

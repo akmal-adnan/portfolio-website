@@ -7,11 +7,7 @@ import {
   RiLinkedinBoxFill,
 } from '@remixicon/react';
 
-import gsap from 'gsap';
-import ScrollSmoother from 'gsap/ScrollSmoother';
-import ScrollTrigger from 'gsap/ScrollTrigger';
 import { motion, type Variants } from 'motion/react';
-gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
 const NavLinks = [
   { label: 'Home', href: '#home' },
@@ -31,7 +27,7 @@ const hoverWipeVariants: Variants = {
   },
 };
 
-export const Footer = () => {
+const Footer = () => {
   return (
     <footer className={styles.sectionContainer} id="more">
       <VelocityScrollText
@@ -119,3 +115,5 @@ export const Footer = () => {
     </footer>
   );
 };
+
+export default Footer;

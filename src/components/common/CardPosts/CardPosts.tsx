@@ -14,7 +14,13 @@ const CardPosts = ({ item, i }: Props) => {
       <div className={styles.cardTextContainer}>
         <div style={{ display: 'grid', gap: '15px' }}>
           <div className={styles.cardImageContainer}>
-            <img src={item.cardImages} alt="" />
+            <img
+              src={item.cardImages}
+              alt="project images"
+              loading="lazy"
+              width={100}
+              height={100}
+            />
           </div>
 
           <div className={styles.cardTitleGroup}>

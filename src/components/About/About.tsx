@@ -37,9 +37,9 @@ const stackList2 = [
   { text: 'Mongodb', icon: 'mongodb' },
 ];
 
-const EXPEREINCE_YEARS = 4;
+const EXPERIENCE_YEARS = 4;
 
-const About = () => {
+export const About = () => {
   const { dark } = useDarkMode();
 
   return (
@@ -69,7 +69,8 @@ const About = () => {
           <img
             className={styles.profileImages}
             src={images.ProfileImg}
-            alt="profile image"
+            alt="profile-image"
+            loading="lazy"
           />
         </div>
 
@@ -78,6 +79,7 @@ const About = () => {
             src={images.bgStar}
             alt="star"
             className={styles.backgroundStar}
+            loading="lazy"
           />
           <div className={styles.codingContainer}>
             <p>Currently</p>
@@ -88,11 +90,13 @@ const About = () => {
               src={images.reazonLogo}
               alt="reazon-logo"
               className={`${styles.reazonLogo} ${dark && styles.addFilter}`}
+              loading="lazy"
             />
             <img
               src={images.menuLogo}
               alt="reazon-logo"
               className={`${styles.reazonLogo} ${dark && styles.addFilter}`}
+              loading="lazy"
             />
           </div>
         </div>
@@ -107,14 +111,15 @@ const About = () => {
             <img
               className={styles.codeImage}
               src={images.codingDark}
-              alt="code image"
+              alt="code-image"
+              loading="lazy"
             />
           </div>
         </div>
 
         <div className={`${styles.gridBox} ${styles.centerContainer}`}>
           <div className={styles.experienceText}>
-            <h1>{EXPEREINCE_YEARS}+</h1>
+            <h1>{EXPERIENCE_YEARS}+</h1>
             <h3>Years of Experience</h3>
           </div>
         </div>

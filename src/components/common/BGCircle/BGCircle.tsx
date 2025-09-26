@@ -21,7 +21,7 @@ const BGCircle = ({ defaultSpeed = 0.05 }: Props) => {
 
   useEffect(() => {
     ScrollTrigger.create({
-      trigger: document.documentElement,
+      trigger: circleRef.current,
       scrub: true,
       start: 0,
       end: '+=99999',

@@ -76,10 +76,9 @@ const Posts = () => {
             <motion.div
               initial={{
                 opacity: 0,
-                x: i % 2 === 0 ? -150 : 150,
-                y: 150,
+                x: i % 2 === 0 ? -120 : 120,
               }}
-              whileInView={{ opacity: 1, x: 0, y: 0 }}
+              whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, ease: 'easeOut' }}
               // viewport={{ once: true }}
             >

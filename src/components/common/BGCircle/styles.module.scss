@@ -2,14 +2,17 @@
 
 .cirleContainer {
   position: fixed;
-  filter: invert(100%) grayscale(100%);
+  filter: invert(100%);
   display: flex;
   justify-self: center;
+  margin-top: 20px;
   @include max-width(md) {
     display: flex;
     justify-self: center;
     width: 900px;
   }
+
+  will-change: transform;
 }
 
 .darkMode {

@@ -47,6 +47,7 @@ const Hero = () => {
             className={styles.profileImages}
             src={images.ProfileImg}
             alt="profile image"
+            loading="lazy"
           />
         </motion.div>
 
