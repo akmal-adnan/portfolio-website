@@ -99,7 +99,7 @@ const Hero = () => {
           <MagneticButton variants={springVariants}>
             <AnimatedButton>
               <a
-                href="/akmal-resume-2025.pdf"
+                href="/akmal-resume-oct-2025.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 title="View Resume"

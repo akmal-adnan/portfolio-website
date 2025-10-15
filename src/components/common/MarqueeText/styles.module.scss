@@ -8,7 +8,7 @@
   width: max-content;
   animation: marqueeMoveText var(--speed, 10s) linear infinite
     var(--direction, forwards);
-  will-change: transform;
+  // will-change: transform;
 }
 
 .marqueeText {
